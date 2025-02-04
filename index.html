@@ -1,24 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ana Furtado</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fragment+Core:wght@400;600&family=Nixie+One&family=Playfair+Display:ital@1&family=Role+Model&display=swap" rel="stylesheet">
+        <!-- INICIO CSS FONTS -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fragment+Core:wght@400;600&family=Nixie+One&family=Playfair+Display:ital@1&family=Role+Model&display=swap" rel="stylesheet">
+
+   <script>
+    (function(d) {
+      var e = d.createElement("link"), f = d.createElement("script"), a = "rel", b = "preload";
+       e.href = "https://fonts.googleapis.com/css2?family=Fragment+Core:wght@400;600&family=Nixie+One&family=Playfair+Display:ital@1&family=Role+Model&display=swap"; e[a] = b;e.as = 'font';f[a]= b;f.as = 'style'
+      f.src = "https://fonts.googleapis.com/css2?family=Fragment+Core:wght@400;600&family=Nixie+One&family=Playfair+Display:ital@1&family=Role+Model&display=swap&display=swap"
+      d.head.insertBefore(f,d.head.childNodes[0])
+       d.head.insertBefore(e, d.head.childNodes[0])
+    })(document);
+
+      </script>
+
+<!-- FIM CSS FONTS -->
+
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
-    <header>
-        <h1 class="logo">ANA FURTADO</h1>
-        <nav>
+    <header class="header">
+       <div class="container">
+        <h1 class="header__logo">ANA FURTADO</h1>
+        <nav class="header__nav">
             <ul>
-                <li><a href="#" aria-label="Home"><i class="fas fa-home"></i></a></li>
-                <li><a href="#minha-trajetoria" aria-label="Minha Trajetória">Minha Trajetória</a></li>
+            <li><a href="#" aria-label="Home"><i class="fas fa-home"></i></a></li>
+            <li><a href="#minha-trajetoria" aria-label="Minha Trajetória">Minha Trajetória</a></li>
                 <li><a href="#conteudo" aria-label="Conteúdo">Conteúdo</a></li>
                 <li class="dropdown">
                     <a href="#" aria-label="Projetos" class="dropbtn">Projetos</a>
@@ -27,36 +41,34 @@
                         <a href="cartas-diaspora.html" aria-label="Cartas da Diáspora">Cartas da Diáspora</a>
                     </div>
                 </li>
-               <li><a href="https://www.linkedin.com/in/anaclaudiafurtado/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/anaclaudiafurtado/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
                 <li><a href="https://www.instagram.com/anafurtado.png/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
                 <li><a href="mailto:ana.furtado1996@gmail.com" aria-label="E-mail"><i class="fas fa-envelope"></i></a></li>
             </ul>
         </nav>
+    </div>
     </header>
 
     <main>
     <section class="banner banner-1">
-        <div class="banner-content">
-            <h2 class="banner-title">ana furtado</h2>
-        </div>
+            <img src="img/banner.jpg" alt="Imagem de destaque" class="banner-1__img">
     </section>
 
     <section class="banner banner-2">
-        <div class="banner-text">
-            <p class="banner-subtitle">Catalisando mudanças por meio da Comunicação</p>
+        <div class="banner-2__content">
+            <h2>Ana Furtado</h2>
+          <h3> Catalisando mudanças por meio da Comunicação</h3>
+          <p> Uma profissional que preza a excelência no seu trabalho para criar ambientes mais justos para todas e todos. Comunicadora, especialista em gênero e interseccionalidade</p>
         </div>
-        <div class="banner-image">
-            <img src="img/banner2.jpg" alt="Foto de Ana Furtado pensando sentada">
+         <div class="banner-2__image">
+             <img src="img/banner2.jpg" alt="Foto de Ana Furtado pensando sentada">
         </div>
     </section>
-</main>
-            </div>
-        </section>
 
-        <section class="banner banner-3" id="minha-trajetoria">
-    <div class="banner-content">
-        <p class="mini-bio">
-            Meu nome é Ana Furtado, Sou o fruto da união de culturas, a cabo-verdiana e a brasileira, resultando uma verdadeira Brasi-verdiana. Apaixonada por desafios que me permitam utilizar minhas habilidades de comunicação para um presente mais inclusivo e equitativo!
+    <section class="banner banner-3" id="minha-trajetoria">
+        <div class="container">
+        <p>
+           Meu nome é Ana Furtado, Sou o fruto da união de culturas, a cabo-verdiana e a brasileira, resultando uma verdadeira Brasi-verdiana. Apaixonada por desafios que me permitam utilizar minhas habilidades de comunicação para um presente mais inclusivo e equitativo!
             <br><br>
             Bolsista Chevening 2024-2025. Mestranda em Mídia e Estudos Culturais na Universidade de Lancaster. Comunicóloga e Analista de Gênero e Interseccionalidades. Especialista em Comunicação Estratégica e Gestão de Marcas.
             <br><br>
@@ -66,11 +78,12 @@
             <br><br>
             Estou sempre aberta a novas conexões com pessoas, projetos e oportunidades. Não hesite em me mandar uma mensagem, estou a disposição para trocar ideias :)
         </p>
-    </div>
-</section>
+         </div>
+    </section>
 
          <section class="banner banner-4" id="trajetoria">
-    <h2 class="banner-4-title">Passos da minha trajetória</h2>
+             <div class="container">
+             <h2 class="banner-4-title">Passos da minha trajetória</h2>
     <div class="brands-grid">
         <div class="brand-row">
             <img src="img/tre-logo.png" alt="Marca 1">
@@ -88,15 +101,21 @@
             <img src="img/bahiagastronomia-logo.png" alt="Marca 11">
             <img src="img/senac-logo.png" alt="Marca 12">
         </div>
-    </a>
+         </div>
+      </div>
+   </section>
 
-    <footer>
+   </main>
+
+      <footer>
+         <div class="container">
         <div class="social-icons">
-           <a href="https://https://https://www.linkedin.com/in/anaclaudiafurtado///" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+           <a href="https://https://www.linkedin.com/in/anaclaudiafurtado///" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
             <a href="https://www.instagram.com/anafurtado.png/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="mailto:ana.furtado1996@gmail.com" aria-label="E-mail"><i class="fas fa-envelope"></i></a>
         </div>
-        <<div class="contact-form">
+
+         <div class="contact-form">
     <h3>Entre em contato</h3>
     <form action="#" method="post" style="display: flex; flex-direction: column; align-items: center;">
         <input type="email" name="email" placeholder="Seu e-mail" required>
@@ -104,4 +123,12 @@
         <textarea name="message" placeholder="Sua mensagem" rows="4" required></textarea>
         <button type="submit" style="margin-top: 10px;">Enviar</button>
     </form>
-</div>
+   </div>
+  </div>
+   </footer>
+
+ <script src="script.js"></script>
+
+</body>
+
+</html>
