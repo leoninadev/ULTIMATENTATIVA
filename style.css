@@ -110,14 +110,20 @@ main {
 .banner-1 {
     background-color: #f0f0f0; /* Apenas para visualização */
     padding-bottom: 50px; /* Adiciona um espaçamento na parte de baixo */
+    overflow: hidden; /*Esconde as bordas da imagem caso ela seja maior*/
 }
 
 .banner-1 .banner-content {
     width: 100%; /* Garante que o conteúdo do banner tome toda a largura disponível */
     padding: 0; /* Remove o padding do conteúdo */
+     position: relative; /* Define o posicionamento do conteudo do banner, para que o title fique corretamente alinhado */
 }
 .banner-1 .banner-content h2 {
     margin: 0; /* Remove a margem do título */
+    position: absolute; /* Garante que o titulo não interfira na imagem */
+    top: 50%;  /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Centraliza o elemento */
 }
 
 .banner-1 img {
@@ -396,10 +402,14 @@ footer {
         margin: 5px 0;
     }
 
-    .banner-1 {
-        height: 400px;
+  .banner-1 {
+    padding-bottom: 20px;
+   }
+  
+   .banner-1 img{
+       height: auto;
     }
-
+  
     .banner-title {
         font-size: 3em;
     }
