@@ -116,7 +116,7 @@ main {
 .banner-1 .banner-content {
     width: 100%; /* Garante que o conteúdo do banner tome toda a largura disponível */
     padding: 0; /* Remove o padding do conteúdo */
-     position: relative; /* Define o posicionamento do conteudo do banner, para que o title fique corretamente alinhado */
+    position: relative; /* Define o posicionamento do conteudo do banner, para que o title fique corretamente alinhado */
 }
 .banner-1 .banner-content h2 {
     margin: 0; /* Remove a margem do título */
@@ -134,30 +134,37 @@ main {
     display: block; /* Remove qualquer espaço extra abaixo da imagem */
 }
 
-
 .banner-2 {
+    background-color: #94A473;
     display: flex;
-    flex-direction: row;
+    width: 100%; /* Garante que o banner ocupe toda a largura */
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0; /* Adiciona um pouco de espaçamento vertical */
 }
 
-.banner-text {
-    padding: 20px;
-    /* Ajuste conforme necessário */
+.banner-2 .banner-text {
+    flex: 1;
+    padding: 20px 20px 20px 60px; /* Ajusta o padding do texto */
+    text-align: left;
+    max-width: 50%; /* Define uma largura máxima para o texto */
 }
 
-.banner-image {
-    display: flex;
-    width: 100%;
+.banner-2 .banner-image {
+    flex: 1;
+    padding: 20px 60px 20px 20px; /* Ajusta o padding da imagem */
+    text-align: center;
+    max-width: 50%; /* Define uma largura máxima para a imagem */
 }
-.banner-image img {
-    width: 100%;
+
+.banner-2 .banner-image img {
+    max-width: 100%; /* Garante que a imagem caiba no contêiner */
     height: auto;
+    border-radius: 8px;
     display: block; /* Remove espaços abaixo da imagem */
-    object-fit: cover;
-    margin: 0; /* Remove qualquer margem */
-    padding: 0; /* Remove qualquer padding */
-
 }
+
 
 .banner-title {
     font-family: 'Nixie One', sans-serif; /* Ajuste da fonte aqui! */
@@ -167,33 +174,6 @@ main {
     display: none; /* Removendo o texto central do banner 1 */
 }
 
-.banner-2 {
-    background-color: #94A473;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-.banner-2 .banner-text {
-    flex: 1;
-    padding: 20px;
-    text-align: left;
-}
-
-.banner-2 .banner-image {
-    flex: 1;
-    padding: 20px;
-    text-align: center;
-}
-
-.banner-2 .banner-image img{
-    max-width: 80%;
-    height: auto;
-    border-radius: 8px;
-}
-
 .banner-subtitle {
     font-family: 'Role Model', sans-serif;
     font-size: 2em;
@@ -201,8 +181,8 @@ main {
     font-style: italic;
     font-weight: 400;
     text-align: left;
-    padding-left: 30px;
 }
+
 
 .banner-3{
     background-color: #F8F2EA;
@@ -417,6 +397,17 @@ footer {
     .banner-2 {
         flex-direction: column;
         text-align: center;
+        padding: 20px 0px;
+    }
+  
+  .banner-2 .banner-text {
+       padding: 20px;
+       max-width: 100%;
+    }
+  
+   .banner-2 .banner-image {
+       padding: 20px;
+       max-width: 100%;
     }
 
     .banner-2 .banner-image img{
