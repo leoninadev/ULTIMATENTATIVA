@@ -44,7 +44,6 @@ table {
 	border-spacing: 0;
 }
 
-
 /* ------------------------------------ */
 /*        VARIÁVEIS DO PROJETO         */
 /* ------------------------------------ */
@@ -58,7 +57,6 @@ table {
   --fonte-corpo: 'Role Model', sans-serif;
 }
 
-
 /* ------------------------------------ */
 /*                GERAL                */
 /* ------------------------------------ */
@@ -66,7 +64,7 @@ body {
     background-color: var(--color-fundo);
     color: var(--color-principal);
     font-family: var(--fonte-corpo);
-	line-height: 1.6; /* O ajuste do line-height faz espaçamento entre linhas ficar maior e o texto legível */
+    line-height: 1.6; /* O ajuste do line-height faz espaçamento entre linhas ficar maior e o texto legível */
     overflow-x: hidden; /* Para evitar barras de rolagem horizontais caso conteúdo fique largo */
 }
 
@@ -74,7 +72,7 @@ body {
 .container {
 	max-width: 1200px;
 	margin: 0 auto; /*centralizar*/
-    padding: 0 20px; /* espaçamento nas laterais para telas grandes */
+  padding: 0 20px; /* espaçamento nas laterais para telas grandes */
 }
 
 
@@ -83,15 +81,13 @@ body {
 /* ------------------------------------ */
 .header {
     background-color: var(--color-fundo);
-    padding: 20px 0; /* espaço no topo e na base da header */
+    padding: 20px 0;
 }
-
 .header .container { /* Garante o máximo da header de forma centralizada */
-	display: flex;
-	justify-content: space-between; /* alinha um na esquerda e outro na direita */
-	align-items: center;
+    display: flex;
+	  justify-content: space-between; /* alinha um na esquerda e outro na direita */
+	align-items: center; /*alinhamento horizontal do conteúdo*/
 }
-
 
 /* Logotipo */
 .header__logo {
@@ -99,153 +95,318 @@ body {
     text-decoration: none; /* remove o sublinhado */
     color: var(--color-principal);
 	font-family: var(--fonte-principal);
-	letter-spacing: 2px; /* espaço entre letras*/
+  letter-spacing: 2px; /* espaço entre letras*/
+  font-weight: 500; /* garante que o peso da fonte nao influencie*/
 }
+
 
 /* Menu de navegação */
 .header__nav ul {
-	display: flex; /* Garante os elementos lado a lado*/
+  display: flex; /* Garante os elementos lado a lado*/
+  align-items: center; /* Garante que menu tenha mesma altura*/
+}
+.header__nav ul li{
+  margin: 0 5px; /* distância menor entre cada elemento*/
 }
 
 .header__nav ul li a {
-    margin-left: 25px; /* distância entre os links*/
-	text-decoration: none; /*remove o sublinhado*/
-	color: var(--color-principal); /* Cor do texto*/
-	font-size: 1rem; /* tamanho padrão do texto */
-    position: relative; /* Necessário para criar uma animação no texto abaixo*/
+  margin-left: 20px; /* distância entre os links*/
+    text-decoration: none; /*remove o sublinhado*/
+    color: var(--color-principal); /* Cor do texto*/
+    font-size: 1rem; /* tamanho padrão do texto */
+    position: relative;
+	  font-family: var(--fonte-corpo);
+  font-weight: 400;/* garante que o peso da fonte nao influencie*/
 }
 
 /* Animação do link */
-.header__nav ul li a::before { /* Crio a barra que surgirá quando passar o mouse sobre o texto*/
+.header__nav ul li a::before {
     content: ""; /* A barra será conteúdo */
-	position: absolute; /* barra posicionada com o texto */
+	  position: absolute; /* barra posicionada com o texto */
 	bottom: -4px; /* Posicionada embaixo */
-    left: 0;
-    width: 0; /* Tamanho inicial da barra em 0 (sem visibilidade)*/
-	height: 2px; /* espessura da barra */
-	background-color: var(--color-detalhe); /* cor da barra*/
-	transition: width 0.3s ease; /* velocidade da animação e efeito "suave"*/
+   left: 0;
+   width: 0; /* Tamanho inicial da barra em 0 (sem visibilidade)*/
+	  height: 2px; /* espessura da barra */
+    background-color: var(--color-detalhe); /* cor da barra*/
+	  transition: width 0.3s ease; /* velocidade da animação e efeito "suave"*/
 }
 .header__nav ul li a:hover::before {
-    width: 100%;  /* barra esticada 100% quando passar o mouse sobre*/
+    width: 100%;
 }
 
 
 
 /* ------------------------------------ */
-/*                 BANNER 1                */
+/*              BANNER 1               */
 /* ------------------------------------ */
 .banner-1 {
-  position: relative; /* Para funcionar position absolute no conteúdo dentro do banner*/
-  width: 100%;
-  height: auto;
-  overflow: hidden; /* Impede que o conteúdo passe por cima da borda da seção */
+    width: 100%; /* A section com padding 0 e o width 100%, junto com a img em block, estica e ocupa totalmente o primeiro bloco */
+    overflow: hidden;
+    position: relative;/* necessária para o container dentro*/
 }
-/* IMAGEM CENTRALIZADA NA SEÇÃO E OCUPANDO TODO O ESPAÇO */
+
 .banner-1__img {
     display: block;
-    width: 100%;
-    height: auto;
-    object-fit: cover; /* estende a imagem para cobrir todo o container*/
-	object-position: center;
+  width: 100%;
+   height: auto;
+  object-fit: cover;
+    object-position: center;
 }
 
-/* ------------------------------------ */
-/*              BANNER 2              */
-/* ------------------------------------ */
 
+/* ------------------------------------ */
+/*                BANNER 2                */
+/* ------------------------------------ */
 .banner-2 {
-  display: flex; /* Divisão em duas partes, um bloco na esquerda e um bloco na direita*/
-  flex-wrap: wrap; /* Em telas menores (como celular), empilho verticalmente os elementos*/
+	 display: flex; /* Garante a divisão meio a meio*/
+  flex-wrap: wrap;  /* Em telas menores (como celular), empilho verticalmente os elementos*/
 }
-
 .banner-2__content,
 .banner-2__image {
-    width: 50%;  /* dividindo a seção em duas colunas iguais (metade pra texto, metade para imagem) */
-	display: flex;  /* Flex para organizar conteúdo (centralizando ou espaçando os itens verticalmente ou horizontalmente dentro da div)*/
-	padding: 60px 30px; /*espaçamento nos elementos laterais, dentro dos respectivos blocos*/
-	align-items: center;
-	flex-direction: column; /* conteúdo dos blocos alinhados em colunas, na vertical*/
+	width: 50%;   /* 50% para texto 50% para imagem */
+  display: flex;  /* centraliza e alinha */
+  padding: 80px 30px;/* espaçamentos dentro de cada bloco */
+ align-items: center;
+    flex-direction: column; /* conteúdo dos blocos alinhados em colunas, na vertical*/
 }
-
-
-.banner-2__content h2 { /* Ajustes no h2 dentro do bloco de texto */
-  font-size: 2.2rem; /* tamanho do título*/
-	font-family: var(--fonte-principal);
-	text-transform: uppercase; /* Texto em caixa alta*/
-    letter-spacing: 2px; /* Espaço entre letras*/
-	margin-bottom: 20px; /* margem embaixo do elemento (distância) */
-	text-align: center;
+.banner-2__content h2 {
+ font-size: 2.2rem;  /* tamanho do título */
+    font-family: var(--fonte-principal); /* tipografia */
+    text-transform: uppercase;
+ letter-spacing: 2px;/* espaçamento entre as letras */
+	margin-bottom: 20px;
+ text-align: center;
+  font-weight: 500; /* garante que o peso da fonte nao influencie*/
 }
-.banner-2__content h3 { /* Ajustes no h3 dentro do bloco de texto*/
-	font-size: 1.4rem; /* tamanho do subtítulo */
-	font-family: var(--fonte-subtitulo);
-    margin-bottom: 20px; /* espaçamento entre elementos */
+.banner-2__content h3 {
+    font-size: 1.4rem;  /* tamanho do subtítulo */
+   font-family: var(--fonte-subtitulo);
+   margin-bottom: 20px;/* espaçamento entre os blocos */
     text-align: center;
 }
 .banner-2__content p {
-    font-size: 1rem; /* tamanho do texto */
-	text-align: center;
-    max-width: 400px; /* O máximo que o texto poderá atingir, em questão de largura */
+    font-size: 1rem;   /* tamanho do corpo do texto */
+	text-align: center; /* centralização dos textos */
+   max-width: 400px; /* largura do corpo do texto para que ele nao estique */
 }
 
-/* Para a imagem ocupar toda a área*/
 .banner-2__image {
   overflow: hidden;  /* para evitar que a imagem saia dos limites do container */
 }
-/* Para centralizar, ocupar o máximo de altura e ocupar 100% de largura */
 .banner-2__image img {
-	object-fit: cover; /* para ocupar a área visível */
-  height: 100%; /* imagem ocupa a altura inteira*/
-	display: block;
-    width: 100%;
+    display: block;  /*para funcionar o obj fit cover */
+   object-fit: cover;  /*imagem preenche todo bloco */
+    height: 100%; /* a imagem ocupa toda area da div*/
+   width: 100%;
+}
+
+
+/* ------------------------------------ */
+/*              BANNER 3              */
+/* ------------------------------------ */
+.banner-3 {
+	 padding: 80px 0;  /* espaçamentos na parte interna*/
+}
+.banner-3 .container{
+      max-width: 700px;  /* a biografia não estica tanto em telas maiores */
+  text-align: center; /* para o texto centralizar quando ficar pequeno demais em celulares, o texto estica caso essa propriedade seja retirada*/
+}
+
+.banner-3 p{
+	  font-size: 1.1rem;/* tamanhos dos paragrafos */
+	line-height: 1.7;
+	color: var(--color-principal);/* texto padronizado do banner 3 */
+    margin: 0 auto; /* centraliza caso a tela seja bem larga, o texto deve sempre ocupar area central */
+}
+
+
+
+/* ------------------------------------ */
+/*              BANNER 4              */
+/* ------------------------------------ */
+.banner-4 {
+    padding: 50px 0;/* espaço em todos blocos */
+}
+.banner-4-title {
+   font-size: 1.8rem; /* tamanhos do texto principal da seção */
+    text-transform: uppercase;
+	  font-family: var(--fonte-principal); /* Fonte padronizada no projeto */
+  text-align: center; /* centraliza titulo na seção */
+	letter-spacing: 2px; /* espaçamento das letras */
+	  margin-bottom: 40px;/* Espaçamento entre título e outros itens */
+  font-weight: 500; /* garante que o peso da fonte nao influencie*/
+}
+.brands-grid{
+    padding-top: 20px;  /*espaço do título e marcas*/
+    text-align: center;
+  display: flex; /* Garante os blocos alinhados e um do lado do outro */
+  flex-direction: column;  /* as divs de imagens serao listadas em vertical*/
+    justify-content: center;  /*imagens no centro dos blocos*/
+    align-items: center;/* garante que todos elementos tenham alinhamento central */
+}
+.brand-row {
+	  display: flex; /* a linha deve estar em display flex e alinhado no centro, os elementos sempre juntos horizontalmente e cada fila separada*/
+    justify-content: center; /* as imagens da fileira sempre no centro*/
+   align-items: center; /* Garante a mesma linha entre as marcas */
+  margin-bottom: 20px; /* os elementos de linhas serão sempre separadas um dos outros verticalmente*/
+   width: 100%; /* garante o 100% no container do pai */
+  flex-wrap: wrap;/* responsividade */
+}
+
+.brand-row img {
+    width: 150px;   /* tamanhos das imagens*/
+	 height: auto;   /* altura padrao da img de forma auto (a depender da original)*/
+	 margin: 0 10px;/* distâncias da esquerda e da direita da marca*/
+  display: inline-block;/* os elementos podem usar as propriedades margin e espaçar corretamente*/
 }
 
 /* ------------------------------------ */
-/*            RESPONSIVIDADE            */
+/*            RESPONSIVIDADE           */
 /* ------------------------------------ */
-/* Em telas menores que 768px */
+
 @media (max-width: 768px) {
-    /* Container se adaptando*/
-    .container{
-        padding: 0 15px;
-    }
-    /* Header */
-	.header .container{
-		flex-direction: column; /* alinha a logo em cima e menu embaixo */
-        align-items: start;
-    }
-    .header__nav {
-        margin-top: 15px; /* espaço entre a logo e o menu*/
-    }
-	.header__nav ul li {
-		margin: 0 5px; /* distância menor entre cada elemento*/
-    }
-
-	/* Banner 2*/
-  .banner-2 {
-		flex-direction: column; /* o bloco texto e o bloco imagem ficarão um abaixo do outro*/
-    }
-    .banner-2__content,
-    .banner-2__image {
-      width: 100%;  /* as colunas passam a ter 100% da tela */
-      padding: 30px 20px; /* os espaçamentos também se ajustam para telas menores */
-    }
-
-  .banner-2__image img {
-      height: auto; /* a imagem se adapta a sua altura */
-      width: 100%;
+ /* Container */
+    .container {
+       padding: 0 15px; /* container responsivo */
   }
 
-	.banner-2__content h2 { /* textos adaptados*/
-      font-size: 1.6rem;
-    }
+/* Header */
+ .header .container {
+   flex-direction: column;/* a logo ficará em cima e o menu em baixo na tela do mobile */
+	align-items: start;/* Garante que elementos alinhem na esquerda da tela*/
+  }
 
-    .banner-2__content h3{
-      font-size: 1.2rem;
+ .header__nav {
+        margin-top: 15px;
     }
+	.header__nav ul li {
+      margin: 0 5px;/* as distancias entre links na horizontal serao menores no mobile*/
+ }
+
+/* Banner 1*/
+ .banner-1{
+     padding-top: 50px; /* a area nao gruda em mobile e terá espaçamento adequado*/
+}
+
+ /* Banner 2*/
+  .banner-2 {
+   flex-direction: column;  /* Para quebrar layout meio a meio quando em telas pequenas*/
+  }
+
+ .banner-2__content,
+ .banner-2__image {
+    width: 100%; /* Os dois blocos passam a ocupar 100% do espaço */
+    padding: 40px 20px; /* os blocos serao menores no celular */
+  }
+ .banner-2__image img {
+   height: auto;  /* a altura passa a ser responsiva, em 100% da largura da area do container */
+   width: 100%;
+}
+.banner-2__content h2 {
+    font-size: 1.6rem;   /* as letras em titulos diminuem de tamanho*/
+}
+
+ .banner-2__content h3{
+      font-size: 1.2rem;
+  }
     .banner-2__content p{
         font-size: 0.9rem;
     }
+
+ /* Banner 3*/
+  .banner-3{
+      padding: 60px 0; /* o padding superior e inferior menores do banner da bio */
+}
+
+   .banner-3 p{
+        font-size: 1rem;   /* textos na bio um pouco menores */
+ }
+ .banner-4-title {
+    font-size: 1.5rem;   /* subtitulos no mobile são menores que os computadores/tables */
+  }
+  .brand-row img {
+      width: 120px;    /* marcas também um pouco menores */
+}
+
+
+}
+/* ------------------------------------ */
+/*              FOOTER              */
+/* ------------------------------------ */
+
+.footer {
+ background-color: var(--color-fundo);  /* fundo igual do resto da página*/
+     padding: 30px 0;/* espaçamentos internos (topo e base)*/
+ }
+ .footer .container{
+       display: flex; /* itens em linha e no espaço central */
+        justify-content: space-between; /* Um elemento pra esquerda e um para a direita*/
+   align-items: center;
+    flex-wrap: wrap;
+ }
+.social-icons {
+	margin-right: 30px;   /* distancia da social icons e outros elementos  */
+ }
+.social-icons a {
+    margin-right: 10px; /* margens internas  para espaçar*/
+    color: var(--color-principal); /* padronização das cores no icone social  */
+  font-size: 1.5rem; /* padroniza os ícones no tamanho original*/
+}
+
+.contact-form {
+	    display: flex;
+  flex-direction: column;  /* flex para organizar elementos*/
+    max-width: 400px;/* largura do bloco de contatos */
+     margin-bottom: 15px; /* espaçamento entre contato e bottom (geral no rodapé)*/
+ }
+  .contact-form h3 {
+    margin-bottom: 10px;  /* espaçamento no tituto */
+     color: var(--color-principal);
+   text-align: left;   /* o título não deve ser centralizado*/
+   font-size: 1.4rem;   /* ajuste do tamanho para nao ficar tao grande*/
+    font-family: var(--fonte-subtitulo);/* fonte igual nos demais subtítulos*/
+ }
+
+.contact-form__form {
+       display: flex;
+    flex-direction: column;/* alinhar campos um embaixo do outro*/
+     align-items: flex-start; /* elementos à esquerda (nao centro); se você trocar, tudo muda de posicao*/
+ }
+
+ .contact-form__form input,
+  .contact-form__form textarea {
+     padding: 10px;  /* espaçamento interno na area*/
+     margin-bottom: 10px;   /* espaçamentos entre botoes*/
+       width: 100%;   /*  o formulario preenche totalmente  seu container horizontalmente */
+    border: 1px solid var(--color-detalhe); /* o css nos bordes sao responsaveis pela cor do texto e bordas nos elementos */
+}
+.contact-form__form button {
+        padding: 10px 20px;    /* espaços nas extremidades horizontais do botao e verticais*/
+    background-color: var(--color-detalhe); /* o btn e de cor clara no padrao */
+      color: var(--color-fundo);  /* botoes em fundo mais escuros */
+  border: none; /* remove bordas para não conflitar com padrao */
+     cursor: pointer;   /* ao passar, deixa a seta como cursor*/
+    align-self: flex-end; /* btn sempre ao final do cont */
+    transition: 0.2s ease;  /* cria transicao no botão quando passamos o mouse*/
+}
+
+.contact-form__form button:hover {
+     opacity: 0.9;   /* um pequeno alpha para garantir visualização da interação com mouse*/
+}
+
+/* Em telas menores */
+@media (max-width: 768px) {
+
+ /* Footer */
+     .footer .container {
+     flex-direction: column; /* todos ficam um embaixo do outro na vertifical */
+     align-items: flex-start;  /* itens alinhados sempre à esquerda*/
+}
+   .social-icons {
+       margin-bottom: 15px; /* uma distância para o componente abaixo não se sobrepor com outros elementos quando no modo responsivo do celular (a area deve dar uma folga quando celular estiver na vertical)*/
+   }
+   .contact-form {
+	 max-width: 100%;/* preenche container na area horizontal (no mobile deve sempre ocupar toda área */
+  }
 
 }
