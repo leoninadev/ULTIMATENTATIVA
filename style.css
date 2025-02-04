@@ -101,7 +101,8 @@ main {
 section {
     padding: 60px 0;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0;
+    padding: 0; /
     position: relative;
     overflow: hidden;
 }
@@ -110,7 +111,7 @@ section {
     background-image: url('img/banner1.jpg');
     background-size: cover;
     background-position: center;
-    height: 600px;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -133,7 +134,7 @@ section {
 }
 
 .banner-2 {
-    background-color: #94A473; /* Cor verde de detalhes */
+    background-color: #392523; /* Cor verde de detalhes */
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -150,7 +151,7 @@ section {
 .banner-2 .banner-image {
     flex: 1;
     padding: 20px;
-    text-align: center;
+    text-align: right;
 }
 
 .banner-2 .banner-image img{
