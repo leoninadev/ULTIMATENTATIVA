@@ -9,12 +9,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         dropbtn.addEventListener('click', function(e) {
             e.preventDefault(); // Impede o comportamento padrão do link
-             dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
         });
-        document.addEventListener('click', function(event) {
-                if (!dropdown.contains(event.target)) {
-                     dropdownContent.style.display = 'none';
+         document.addEventListener('click', function(event) {
+            if (!dropdown.contains(event.target)) {
+                dropdownContent.style.display = 'none';
                 }
-            });
+          });
     });
 });
