@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Nixie One', sans-serif; /* Fonte Nixie One como padrão */
+    font-family: 'Nixie One', sans-serif;
     font-size: 16px;
     color: #392523;
     background-color: #F8F2EA;
@@ -94,84 +94,93 @@ nav ul li a:hover {
 }
 
 /* Banner Sections */
-/* Estilos gerais (ajuste conforme necessário) */
 main {
+    padding-top: 80px;
     width: 100%;
+}
+
+section {
+    padding: 0px;
+    max-width: 100%; /* Ajuste para ocupar toda a largura */
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
 }
 
 .banner {
     width: 100%;
     display: flex;
     align-items: center;
-    padding: 0; /* Remove padding do banner em geral */
-    /* Outros estilos comuns aos banners */
+    padding: 0;
 }
 
 .banner-1 {
-    background-color: #f0f0f0; /* Apenas para visualização */
-    padding-bottom: 50px; /* Adiciona um espaçamento na parte de baixo */
-    overflow: hidden; /*Esconde as bordas da imagem caso ela seja maior*/
+    background-image: url('img/banner1.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    background-color: #f0f0f0;
+    padding-bottom: 50px;
 }
 
 .banner-1 .banner-content {
-    width: 100%; /* Garante que o conteúdo do banner tome toda a largura disponível */
-    padding: 0; /* Remove o padding do conteúdo */
-    position: relative; /* Define o posicionamento do conteudo do banner, para que o title fique corretamente alinhado */
+    width: 100%;
+    padding: 0;
 }
+
 .banner-1 .banner-content h2 {
-    margin: 0; /* Remove a margem do título */
-    position: absolute; /* Garante que o titulo não interfira na imagem */
-    top: 50%;  /* Centraliza verticalmente */
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translate(-50%, -50%); /* Centraliza o elemento */
+    margin: 0;
 }
 
 .banner-1 img {
-   width: 100%; /* Faz a imagem cobrir toda a largura da tela */
+   width: 100%;
    height: auto;
-    object-fit: cover; /* Garante que a imagem cubra o espaço sem deformar */
-    margin: 0; /* Remove qualquer margem da imagem */
-    display: block; /* Remove qualquer espaço extra abaixo da imagem */
+    object-fit: cover;
+    margin: 0;
+    display: block;
 }
 
 .banner-2 {
     background-color: #94A473;
     display: flex;
-    width: 100%; /* Garante que o banner ocupe toda a largura */
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
-    padding: 20px 0; /* Adiciona um pouco de espaçamento vertical */
+     justify-content: space-between; /* Alinha texto e imagem com espaço entre */
+    width: 100%;
 }
+
 
 .banner-2 .banner-text {
     flex: 1;
-    padding: 20px 20px 20px 60px; /* Ajusta o padding do texto */
+    padding: 20px 20px 20px 60px;
     text-align: left;
     max-width: 50%; /* Define uma largura máxima para o texto */
 }
 
 .banner-2 .banner-image {
     flex: 1;
-    padding: 20px 60px 20px 20px; /* Ajusta o padding da imagem */
+     padding: 20px 60px 20px 20px;
     text-align: center;
-    max-width: 50%; /* Define uma largura máxima para a imagem */
+     max-width: 50%; /* Define uma largura máxima para a imagem */
 }
-
-.banner-2 .banner-image img {
-    max-width: 100%; /* Garante que a imagem caiba no contêiner */
+  .banner-2 .banner-image img {
+    max-width: 100%;
     height: auto;
     border-radius: 8px;
-    display: block; /* Remove espaços abaixo da imagem */
+    display: block;
 }
 
 
+.banner-content {
+    z-index: 2;
+}
+
 .banner-title {
-    font-family: 'Nixie One', sans-serif; /* Ajuste da fonte aqui! */
+    font-family: 'Nixie One', sans-serif;
     font-size: 4em;
     color: #fff;
     font-style: italic;
-    display: none; /* Removendo o texto central do banner 1 */
+    display: none;
 }
 
 .banner-subtitle {
@@ -181,8 +190,8 @@ main {
     font-style: italic;
     font-weight: 400;
     text-align: left;
+    padding-left: 30px;
 }
-
 
 .banner-3{
     background-color: #F8F2EA;
@@ -382,14 +391,10 @@ footer {
         margin: 5px 0;
     }
 
-  .banner-1 {
-    padding-bottom: 20px;
-   }
-  
-   .banner-1 img{
-       height: auto;
+    .banner-1 {
+        height: 400px;
     }
-  
+
     .banner-title {
         font-size: 3em;
     }
@@ -397,10 +402,9 @@ footer {
     .banner-2 {
         flex-direction: column;
         text-align: center;
-        padding: 20px 0px;
     }
-  
-  .banner-2 .banner-text {
+
+    .banner-2 .banner-text {
        padding: 20px;
        max-width: 100%;
     }
@@ -409,7 +413,7 @@ footer {
        padding: 20px;
        max-width: 100%;
     }
-
+  
     .banner-2 .banner-image img{
         max-width: 100%;
     }
