@@ -1,410 +1,412 @@
-/* Reset CSS */
-* {
+/* ------------------------------------ */
+/*              RESET CSS              */
+/* ------------------------------------ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	padding: 0;
+	border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+	box-sizing: border-box;
 }
-
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 body {
-    font-family: 'Role Model', sans-serif;
-    font-size: 16px;
-    color: #333;
-    background-color: #fff;
-    line-height: 1.6;
-    overflow-x: hidden;
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-/* Header */
-header {
+/* ------------------------------------ */
+/*        VARIÁVEIS DO PROJETO         */
+/* ------------------------------------ */
+:root {
+  --color-principal: #392523;
+  --color-detalhe: #94A473;
+  --color-fundo: #F8F2EA;
+
+  --fonte-principal: 'Nixie One', cursive;
+  --fonte-subtitulo: 'Fragment Core', sans-serif;
+  --fonte-corpo: 'Role Model', sans-serif;
+}
+
+/* ------------------------------------ */
+/*                GERAL                */
+/* ------------------------------------ */
+body {
+    background-color: var(--color-fundo);
+    color: var(--color-principal);
+    font-family: var(--fonte-corpo);
+    line-height: 1.6; /* O ajuste do line-height faz espaçamento entre linhas ficar maior e o texto legível */
+    overflow-x: hidden; /* Para evitar barras de rolagem horizontais caso conteúdo fique largo */
+}
+
+/* Conteúdo com largura máxima para desktop */
+.container {
+	max-width: 1200px;
+	margin: 0 auto; /*centralizar*/
+  padding: 0 20px; /* espaçamento nas laterais para telas grandes */
+}
+
+
+/* ------------------------------------ */
+/*                HEADER               */
+/* ------------------------------------ */
+.header {
+    background-color: var(--color-fundo);
+    padding: 20px 0;
+}
+.header .container { /* Garante o máximo da header de forma centralizada */
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
+	  justify-content: space-between; /* alinha um na esquerda e outro na direita */
+	align-items: center; /*alinhamento horizontal do conteúdo*/
 }
 
-.logo {
-    font-family: 'Nixie One', sans-serif;
-    font-size: 2em;
-    color: #4A372F;
-    letter-spacing: 2px;
-    text-align: center;
+/* Logotipo */
+.header__logo {
+    font-size: 1.5rem; /* para o logo ser um pouco maior */
+    text-decoration: none; /* remove o sublinhado */
+    color: var(--color-principal);
+	font-family: var(--fonte-principal);
+  letter-spacing: 2px; /* espaço entre letras*/
+  font-weight: 500; /* garante que o peso da fonte nao influencie*/
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
+
+/* Menu de navegação */
+.header__nav ul {
+  display: flex; /* Garante os elementos lado a lado*/
+  align-items: center; /* Garante que menu tenha mesma altura*/
+}
+.header__nav ul li{
+  margin: 0 5px; /* distância menor entre cada elemento*/
 }
 
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #4A372F;
-    transition: color 0.3s ease;
-    font-weight: 500;
-    font-family: 'Fragment Core', sans-serif;
-}
-
-nav ul li a:hover {
-    color: #384538;
-}
-
-.dropdown {
-  position: relative;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-    color: #4A372F;
-    transition: color 0.3s ease;
-    font-weight: 500;
-    font-family: 'Fragment Core', sans-serif;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-     color: #384538;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropbtn {
-  cursor: pointer;
-}
-
-/* Banner Sections */
-main {
-    padding-top: 80px;
-}
-
-section {
-    padding: 60px 0;
-    max-width: 1200px;
-    margin: 0 auto;
+.header__nav ul li a {
+  margin-left: 20px; /* distância entre os links*/
+    text-decoration: none; /*remove o sublinhado*/
+    color: var(--color-principal); /* Cor do texto*/
+    font-size: 1rem; /* tamanho padrão do texto */
     position: relative;
-    overflow: hidden; /* Importante para o efeito de background */
+	  font-family: var(--fonte-corpo);
+  font-weight: 400;/* garante que o peso da fonte nao influencie*/
 }
 
+/* Animação do link */
+.header__nav ul li a::before {
+    content: ""; /* A barra será conteúdo */
+	  position: absolute; /* barra posicionada com o texto */
+	bottom: -4px; /* Posicionada embaixo */
+   left: 0;
+   width: 0; /* Tamanho inicial da barra em 0 (sem visibilidade)*/
+	  height: 2px; /* espessura da barra */
+    background-color: var(--color-detalhe); /* cor da barra*/
+	  transition: width 0.3s ease; /* velocidade da animação e efeito "suave"*/
+}
+.header__nav ul li a:hover::before {
+    width: 100%;
+}
+
+
+
+/* ------------------------------------ */
+/*              BANNER 1               */
+/* ------------------------------------ */
 .banner-1 {
-   background-image: url('img/banner1.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    background-repeat: no-repeat;
+    width: 100%; /* A section com padding 0 e o width 100%, junto com a img em block, estica e ocupa totalmente o primeiro bloco */
+    overflow: hidden;
+    position: relative;/* necessária para o container dentro*/
 }
 
-.banner-content {
-    z-index: 2;
+.banner-1__img {
+    display: block;
+  width: 100%;
+   height: auto;
+  object-fit: cover;
+    object-position: center;
 }
 
-.banner-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 4em;
-    color: #fff;
-    font-style: italic;
-}
 
+/* ------------------------------------ */
+/*                BANNER 2                */
+/* ------------------------------------ */
 .banner-2 {
-     background-color: #384538;
-     display: flex;
-     flex-wrap: wrap;
-     align-items: center;
-     justify-content: center;
-     width: 100%;
+	 display: flex; /* Garante a divisão meio a meio*/
+  flex-wrap: wrap;  /* Em telas menores (como celular), empilho verticalmente os elementos*/
 }
-
-.banner-2 .banner-text {
-    flex: 1;
-    padding: 20px;
-    text-align: left;
+.banner-2__content,
+.banner-2__image {
+	width: 50%;   /* 50% para texto 50% para imagem */
+  display: flex;  /* centraliza e alinha */
+  padding: 80px 30px;/* espaçamentos dentro de cada bloco */
+ align-items: center;
+    flex-direction: column; /* conteúdo dos blocos alinhados em colunas, na vertical*/
 }
-
-.banner-2 .banner-image {
-    flex: 1;
-    padding: 20px;
+.banner-2__content h2 {
+ font-size: 2.2rem;  /* tamanho do título */
+    font-family: var(--fonte-principal); /* tipografia */
+    text-transform: uppercase;
+ letter-spacing: 2px;/* espaçamento entre as letras */
+	margin-bottom: 20px;
+ text-align: center;
+  font-weight: 500; /* garante que o peso da fonte nao influencie*/
+}
+.banner-2__content h3 {
+    font-size: 1.4rem;  /* tamanho do subtítulo */
+   font-family: var(--fonte-subtitulo);
+   margin-bottom: 20px;/* espaçamento entre os blocos */
     text-align: center;
 }
-
-.banner-2 .banner-image img{
-    max-width: 80%;
-    height: auto;
-    border-radius: 8px;
+.banner-2__content p {
+    font-size: 1rem;   /* tamanho do corpo do texto */
+	text-align: center; /* centralização dos textos */
+   max-width: 400px; /* largura do corpo do texto para que ele nao estique */
 }
 
-.banner-subtitle {
-   font-family: 'Fragment Core', sans-serif;
-    font-size: 2em;
-    color: #fff;
-    font-style: italic;
-    font-weight: 400;
-    text-align: left;
-     padding-left: 30px;
+.banner-2__image {
+  overflow: hidden;  /* para evitar que a imagem saia dos limites do container */
+}
+.banner-2__image img {
+    display: block;  /*para funcionar o obj fit cover */
+   object-fit: cover;  /*imagem preenche todo bloco */
+    height: 100%; /* a imagem ocupa toda area da div*/
+   width: 100%;
 }
 
-.banner-3{
-    background-color: #f0f0f0;
-    display: flex;
-    position: relative; /* Adicionado */
-    align-items: center;
-    justify-content: center;
-    padding: 0;
+
+/* ------------------------------------ */
+/*              BANNER 3              */
+/* ------------------------------------ */
+.banner-3 {
+	 padding: 80px 0;  /* espaçamentos na parte interna*/
+}
+.banner-3 .container{
+      max-width: 700px;  /* a biografia não estica tanto em telas maiores */
+  text-align: center; /* para o texto centralizar quando ficar pequeno demais em celulares, o texto estica caso essa propriedade seja retirada*/
 }
 
-.banner-3 .background-image{
-   background-image: url('img/banner3.jpg');
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-     filter: brightness(0.4);
-       background-size: cover;
-       background-repeat: no-repeat;
+.banner-3 p{
+	  font-size: 1.1rem;/* tamanhos dos paragrafos */
+	line-height: 1.7;
+	color: var(--color-principal);/* texto padronizado do banner 3 */
+    margin: 0 auto; /* centraliza caso a tela seja bem larga, o texto deve sempre ocupar area central */
 }
 
-.banner-3 .background-image img{
-    width: 100%;
-    height: 100%;
-     object-fit: cover; /* Ajusta a imagem para cobrir todo o container */
-    object-position: center; /* Centraliza a imagem */
-    display: none;
-}
 
-.banner-3 .banner-text {
-     padding: 60px;
-      z-index: 1; /* Garante que o texto fique acima da imagem */
-}
 
-.mini-bio {
-   font-family: 'Fragment Core', sans-serif;
-   font-size: 1.1em;
-   font-weight: 500;
-    color: #fff;
-    line-height: 1.8;
-     max-width: 800px;
-    text-align: left;
-}
-
+/* ------------------------------------ */
+/*              BANNER 4              */
+/* ------------------------------------ */
 .banner-4 {
- background-color: #f5f5f5;
-   text-align: center;
-    padding-top: 60px;
-    padding-bottom: 0;
+    padding: 50px 0;/* espaço em todos blocos */
 }
-
 .banner-4-title {
-    font-family: 'Nixie One', sans-serif;
-    font-size: 2.5em;
-     color: #4A372F;
-      margin-bottom: 30px;
+   font-size: 1.8rem; /* tamanhos do texto principal da seção */
+    text-transform: uppercase;
+	  font-family: var(--fonte-principal); /* Fonte padronizada no projeto */
+  text-align: center; /* centraliza titulo na seção */
+	letter-spacing: 2px; /* espaçamento das letras */
+	  margin-bottom: 40px;/* Espaçamento entre título e outros itens */
+  font-weight: 500; /* garante que o peso da fonte nao influencie*/
 }
-
-.brands-grid {
-     display: flex;
-      flex-direction: column;
-        padding: 0 20px 60px;
+.brands-grid{
+    padding-top: 20px;  /*espaço do título e marcas*/
+    text-align: center;
+  display: flex; /* Garante os blocos alinhados e um do lado do outro */
+  flex-direction: column;  /* as divs de imagens serao listadas em vertical*/
+    justify-content: center;  /*imagens no centro dos blocos*/
+    align-items: center;/* garante que todos elementos tenham alinhamento central */
 }
-
 .brand-row {
-    display: flex;
-    justify-content: center;
-     flex-wrap: wrap;
-        margin-bottom: 30px;
+	  display: flex; /* a linha deve estar em display flex e alinhado no centro, os elementos sempre juntos horizontalmente e cada fila separada*/
+    justify-content: center; /* as imagens da fileira sempre no centro*/
+   align-items: center; /* Garante a mesma linha entre as marcas */
+  margin-bottom: 20px; /* os elementos de linhas serão sempre separadas um dos outros verticalmente*/
+   width: 100%; /* garante o 100% no container do pai */
+  flex-wrap: wrap;/* responsividade */
 }
 
 .brand-row img {
-    width: 80px;
-    margin: 0 20px;
+    width: 150px;   /* tamanhos das imagens*/
+	 height: auto;   /* altura padrao da img de forma auto (a depender da original)*/
+	 margin: 0 10px;/* distâncias da esquerda e da direita da marca*/
+  display: inline-block;/* os elementos podem usar as propriedades margin e espaçar corretamente*/
 }
 
- /* Gallery */
- .gallery {
-      background-color: #fff;
-       text-align: center;
-        padding-top: 60px;
-        padding-bottom: 0;
+/* ------------------------------------ */
+/*            RESPONSIVIDADE           */
+/* ------------------------------------ */
+
+@media (max-width: 768px) {
+ /* Container */
+    .container {
+       padding: 0 15px; /* container responsivo */
+  }
+
+/* Header */
+ .header .container {
+   flex-direction: column;/* a logo ficará em cima e o menu em baixo na tela do mobile */
+	align-items: start;/* Garante que elementos alinhem na esquerda da tela*/
+  }
+
+ .header__nav {
+        margin-top: 15px;
+    }
+	.header__nav ul li {
+      margin: 0 5px;/* as distancias entre links na horizontal serao menores no mobile*/
  }
-.gallery h2{
-   font-family: 'Nixie One', sans-serif;
-    font-size: 2.5em;
-     color: #4A372F;
-      margin-bottom: 30px;
-}
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
+
+/* Banner 1*/
+ .banner-1{
+     padding-top: 50px; /* a area nao gruda em mobile e terá espaçamento adequado*/
 }
 
-.gallery-item {
-   text-decoration: none;
-   display: block;
-    transition: transform 0.3s ease;
+ /* Banner 2*/
+  .banner-2 {
+   flex-direction: column;  /* Para quebrar layout meio a meio quando em telas pequenas*/
+  }
+
+ .banner-2__content,
+ .banner-2__image {
+    width: 100%; /* Os dois blocos passam a ocupar 100% do espaço */
+    padding: 40px 20px; /* os blocos serao menores no celular */
+  }
+ .banner-2__image img {
+   height: auto;  /* a altura passa a ser responsiva, em 100% da largura da area do container */
+   width: 100%;
+}
+.banner-2__content h2 {
+    font-size: 1.6rem;   /* as letras em titulos diminuem de tamanho*/
 }
 
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
+ .banner-2__content h3{
+      font-size: 1.2rem;
+  }
+    .banner-2__content p{
+        font-size: 0.9rem;
+    }
+
+ /* Banner 3*/
+  .banner-3{
+      padding: 60px 0; /* o padding superior e inferior menores do banner da bio */
 }
 
-.gallery-item:hover {
-    transform: scale(1.05);
+   .banner-3 p{
+        font-size: 1rem;   /* textos na bio um pouco menores */
+ }
+ .banner-4-title {
+    font-size: 1.5rem;   /* subtitulos no mobile são menores que os computadores/tables */
+  }
+  .brand-row img {
+      width: 120px;    /* marcas também um pouco menores */
 }
 
 
-/* Footer */
-footer {
-    padding: 30px 0;
-    background-color: #f0f0f0;
-    text-align: center;
 }
+/* ------------------------------------ */
+/*              FOOTER              */
+/* ------------------------------------ */
 
+.footer {
+ background-color: var(--color-fundo);  /* fundo igual do resto da página*/
+     padding: 30px 0;/* espaçamentos internos (topo e base)*/
+ }
+ .footer .container{
+       display: flex; /* itens em linha e no espaço central */
+        justify-content: space-between; /* Um elemento pra esquerda e um para a direita*/
+   align-items: center;
+    flex-wrap: wrap;
+ }
+.social-icons {
+	margin-right: 30px;   /* distancia da social icons e outros elementos  */
+ }
 .social-icons a {
-    font-size: 25px;
-     margin: 0 10px;
-       color: #4A372F;
-       transition: color 0.3s ease;
+    margin-right: 10px; /* margens internas  para espaçar*/
+    color: var(--color-principal); /* padronização das cores no icone social  */
+  font-size: 1.5rem; /* padroniza os ícones no tamanho original*/
 }
-
-.social-icons a:hover {
-    color: #384538;
-}
-
 
 .contact-form {
-    max-width: 500px;
-    margin: 20px auto;
-    text-align: left;
+	    display: flex;
+  flex-direction: column;  /* flex para organizar elementos*/
+    max-width: 400px;/* largura do bloco de contatos */
+     margin-bottom: 15px; /* espaçamento entre contato e bottom (geral no rodapé)*/
+ }
+  .contact-form h3 {
+    margin-bottom: 10px;  /* espaçamento no tituto */
+     color: var(--color-principal);
+   text-align: left;   /* o título não deve ser centralizado*/
+   font-size: 1.4rem;   /* ajuste do tamanho para nao ficar tao grande*/
+    font-family: var(--fonte-subtitulo);/* fonte igual nos demais subtítulos*/
+ }
+
+.contact-form__form {
+       display: flex;
+    flex-direction: column;/* alinhar campos um embaixo do outro*/
+     align-items: flex-start; /* elementos à esquerda (nao centro); se você trocar, tudo muda de posicao*/
+ }
+
+ .contact-form__form input,
+  .contact-form__form textarea {
+     padding: 10px;  /* espaçamento interno na area*/
+     margin-bottom: 10px;   /* espaçamentos entre botoes*/
+       width: 100%;   /*  o formulario preenche totalmente  seu container horizontalmente */
+    border: 1px solid var(--color-detalhe); /* o css nos bordes sao responsaveis pela cor do texto e bordas nos elementos */
+}
+.contact-form__form button {
+        padding: 10px 20px;    /* espaços nas extremidades horizontais do botao e verticais*/
+    background-color: var(--color-detalhe); /* o btn e de cor clara no padrao */
+      color: var(--color-fundo);  /* botoes em fundo mais escuros */
+  border: none; /* remove bordas para não conflitar com padrao */
+     cursor: pointer;   /* ao passar, deixa a seta como cursor*/
+    align-self: flex-end; /* btn sempre ao final do cont */
+    transition: 0.2s ease;  /* cria transicao no botão quando passamos o mouse*/
 }
 
-.contact-form h3 {
-   font-family: 'Nixie One', sans-serif;
-    font-size: 1.8em;
-     color: #4A372F;
-     text-align: center;
-     margin-bottom: 15px;
+.contact-form__form button:hover {
+     opacity: 0.9;   /* um pequeno alpha para garantir visualização da interação com mouse*/
 }
 
-.contact-form input[type="email"],
-.contact-form input[type="text"],
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-     border-radius: 5px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.contact-form button {
-    background-color: #4A372F;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.contact-form button:hover {
-    background-color: #384538;
-}
-
-/* Responsiveness */
+/* Em telas menores */
 @media (max-width: 768px) {
-    header {
-        padding: 15px 20px;
-         flex-direction: column;
-    }
 
-     .logo {
-           font-size: 1.5em;
-            margin-bottom: 10px;
-     }
-    nav ul {
-        flex-direction: column;
-        text-align: center;
-    }
-      nav ul li {
-            margin: 5px 0;
-        }
-
-    .banner-1 {
-        height: 400px;
-    }
-    .banner-title {
-        font-size: 3em;
-    }
-      .banner-2 {
-          flex-direction: column;
-            text-align: center;
-     }
-     .banner-2 .banner-image img{
-          max-width: 100%;
-     }
-
-      .banner-subtitle {
-         font-size: 1.5em;
-          text-align: center;
-            padding-left: 0;
-     }
-
-     .mini-bio {
-         font-size: 1em;
-     }
-
-    .brands-grid {
-          padding: 0 10px;
-    }
-     .brand-row img {
-            width: 60px;
-           margin: 10px 15px;
-        }
-
-     .contact-form {
-         max-width: 90%;
-     }
-
+ /* Footer */
+     .footer .container {
+     flex-direction: column; /* todos ficam um embaixo do outro na vertifical */
+     align-items: flex-start;  /* itens alinhados sempre à esquerda*/
 }
-
-@media (max-width: 480px) {
-     .banner-title {
-        font-size: 2.5em;
-    }
-    .banner-2 .banner-text,
-    .banner-3 .banner-text{
-       padding: 30px;
-    }
+   .social-icons {
+       margin-bottom: 15px; /* uma distância para o componente abaixo não se sobrepor com outros elementos quando no modo responsivo do celular (a area deve dar uma folga quando celular estiver na vertical)*/
+   }
+   .contact-form {
+	 max-width: 100%;/* preenche container na area horizontal (no mobile deve sempre ocupar toda área */
+  }
 
 }
