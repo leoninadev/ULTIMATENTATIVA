@@ -1,424 +1,251 @@
-/* Reset CSS */
-* {
+/* ------------------------------------ */
+/*              RESET CSS              */
+/* ------------------------------------ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	padding: 0;
+	border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+	box-sizing: border-box;
 }
-
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 body {
-    font-family: 'Nixie One', sans-serif; /* Fonte Nixie One como padrão */
-    font-size: 16px;
-    color: #392523; /* Cor castanha principal para texto geral */
-    background-color: #F8F2EA; /* Cor de fundo bege */
-    line-height: 1.6; /* Ajuste no line-height */
-    overflow-x: hidden;
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-/* Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
+
+/* ------------------------------------ */
+/*        VARIÁVEIS DO PROJETO         */
+/* ------------------------------------ */
+:root {
+  --color-principal: #392523;
+  --color-detalhe: #94A473;
+  --color-fundo: #F8F2EA;
+
+  --fonte-principal: 'Nixie One', cursive;
+  --fonte-subtitulo: 'Fragment Core', sans-serif;
+  --fonte-corpo: 'Role Model', sans-serif;
 }
 
-.logo {
-    font-family: 'Nixie One', sans-serif;
-    font-size: 2em;
-    color: #392523; /* Cor castanha principal */
-    letter-spacing: 2px;
-    text-align: center;
+
+/* ------------------------------------ */
+/*                GERAL                */
+/* ------------------------------------ */
+body {
+    background-color: var(--color-fundo);
+    color: var(--color-principal);
+    font-family: var(--fonte-corpo);
+	line-height: 1.6; /* O ajuste do line-height faz espaçamento entre linhas ficar maior e o texto legível */
+    overflow-x: hidden; /* Para evitar barras de rolagem horizontais caso conteúdo fique largo */
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
+/* Conteúdo com largura máxima para desktop */
+.container {
+	max-width: 1200px;
+	margin: 0 auto; /*centralizar*/
+    padding: 0 20px; /* espaçamento nas laterais para telas grandes */
 }
 
-nav ul li {
-    margin: 0 15px;
+
+/* ------------------------------------ */
+/*                HEADER               */
+/* ------------------------------------ */
+.header {
+    background-color: var(--color-fundo);
+    padding: 20px 0; /* espaço no topo e na base da header */
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #392523; /* Cor castanha principal */
-    transition: color 0.3s ease;
-    font-weight: 500;
-    font-family: 'Fragment Core', sans-serif; /* Usando Fragment Core no menu */
+.header .container { /* Garante o máximo da header de forma centralizada */
+	display: flex;
+	justify-content: space-between; /* alinha um na esquerda e outro na direita */
+	align-items: center;
 }
 
-nav ul li a:hover {
-    color: #94A473; /* Cor verde de detalhes */
+
+/* Logotipo */
+.header__logo {
+    font-size: 1.5rem; /* para o logo ser um pouco maior */
+    text-decoration: none; /* remove o sublinhado */
+    color: var(--color-principal);
+	font-family: var(--fonte-principal);
+	letter-spacing: 2px; /* espaço entre letras*/
 }
 
-.dropdown {
-    position: relative;
+/* Menu de navegação */
+.header__nav ul {
+	display: flex; /* Garante os elementos lado a lado*/
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+.header__nav ul li a {
+    margin-left: 25px; /* distância entre os links*/
+	text-decoration: none; /*remove o sublinhado*/
+	color: var(--color-principal); /* Cor do texto*/
+	font-size: 1rem; /* tamanho padrão do texto */
+    position: relative; /* Necessário para criar uma animação no texto abaixo*/
 }
 
-.dropdown-content a {
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    color: #392523; /* Cor castanha principal */
-    transition: color 0.3s ease;
-    font-weight: 500;
-    font-family: 'Fragment Core', sans-serif; /* Usando Fragment Core no dropdown */
+/* Animação do link */
+.header__nav ul li a::before { /* Crio a barra que surgirá quando passar o mouse sobre o texto*/
+    content: ""; /* A barra será conteúdo */
+	position: absolute; /* barra posicionada com o texto */
+	bottom: -4px; /* Posicionada embaixo */
+    left: 0;
+    width: 0; /* Tamanho inicial da barra em 0 (sem visibilidade)*/
+	height: 2px; /* espessura da barra */
+	background-color: var(--color-detalhe); /* cor da barra*/
+	transition: width 0.3s ease; /* velocidade da animação e efeito "suave"*/
+}
+.header__nav ul li a:hover::before {
+    width: 100%;  /* barra esticada 100% quando passar o mouse sobre*/
 }
 
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-    color: #94A473; /* Cor verde de detalhes */
-}
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
 
-.dropbtn {
-    cursor: pointer;
-}
-
-/* Banner Sections */
-main {
-    padding-top: 80px;
-}
-
-section {
-    padding: 60px 0;
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-}
-
+/* ------------------------------------ */
+/*                 BANNER 1                */
+/* ------------------------------------ */
 .banner-1 {
-    background-image: url('img/banner1.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    z-index: 1;
+  position: relative; /* Para funcionar position absolute no conteúdo dentro do banner*/
+  width: 100%;
+  height: auto;
+  overflow: hidden; /* Impede que o conteúdo passe por cima da borda da seção */
+}
+/* IMAGEM CENTRALIZADA NA SEÇÃO E OCUPANDO TODO O ESPAÇO */
+.banner-1__img {
+    display: block;
     width: 100%;
-    background-repeat: no-repeat;
+    height: auto;
+    object-fit: cover; /* estende a imagem para cobrir todo o container*/
+	object-position: center;
 }
 
-.banner-content {
-    z-index: 2;
-}
-
-.banner-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 4em;
-    color: #fff;
-    font-style: italic;
-}
+/* ------------------------------------ */
+/*              BANNER 2              */
+/* ------------------------------------ */
 
 .banner-2 {
-    background-color: #94A473; /* Cor verde de detalhes */
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+  display: flex; /* Divisão em duas partes, um bloco na esquerda e um bloco na direita*/
+  flex-wrap: wrap; /* Em telas menores (como celular), empilho verticalmente os elementos*/
+}
+
+.banner-2__content,
+.banner-2__image {
+    width: 50%;  /* dividindo a seção em duas colunas iguais (metade pra texto, metade para imagem) */
+	display: flex;  /* Flex para organizar conteúdo (centralizando ou espaçando os itens verticalmente ou horizontalmente dentro da div)*/
+	padding: 60px 30px; /*espaçamento nos elementos laterais, dentro dos respectivos blocos*/
+	align-items: center;
+	flex-direction: column; /* conteúdo dos blocos alinhados em colunas, na vertical*/
+}
+
+
+.banner-2__content h2 { /* Ajustes no h2 dentro do bloco de texto */
+  font-size: 2.2rem; /* tamanho do título*/
+	font-family: var(--fonte-principal);
+	text-transform: uppercase; /* Texto em caixa alta*/
+    letter-spacing: 2px; /* Espaço entre letras*/
+	margin-bottom: 20px; /* margem embaixo do elemento (distância) */
+	text-align: center;
+}
+.banner-2__content h3 { /* Ajustes no h3 dentro do bloco de texto*/
+	font-size: 1.4rem; /* tamanho do subtítulo */
+	font-family: var(--fonte-subtitulo);
+    margin-bottom: 20px; /* espaçamento entre elementos */
+    text-align: center;
+}
+.banner-2__content p {
+    font-size: 1rem; /* tamanho do texto */
+	text-align: center;
+    max-width: 400px; /* O máximo que o texto poderá atingir, em questão de largura */
+}
+
+/* Para a imagem ocupar toda a área*/
+.banner-2__image {
+  overflow: hidden;  /* para evitar que a imagem saia dos limites do container */
+}
+/* Para centralizar, ocupar o máximo de altura e ocupar 100% de largura */
+.banner-2__image img {
+	object-fit: cover; /* para ocupar a área visível */
+  height: 100%; /* imagem ocupa a altura inteira*/
+	display: block;
     width: 100%;
 }
 
-.banner-2 .banner-text {
-    flex: 1;
-    padding: 20px;
-    text-align: left;
-}
-
-.banner-2 .banner-image {
-    flex: 1;
-    padding: 20px;
-    text-align: center;
-}
-
-.banner-2 .banner-image img{
-    max-width: 80%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.banner-subtitle {
-    font-family: 'Role Model', sans-serif; /* Usando Role Model nos subtítulos */
-    font-size: 2em;
-    color: #fff;
-    font-style: italic;
-    font-weight: 400;
-    text-align: left;
-    padding-left: 30px;
-}
-
-.banner-3{
-    background-color: #F8F2EA; /* Cor de fundo bege */
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-}
-
-.banner-3 .background-image{
-    background-image: url('img/banner3.jpg');
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    filter: brightness(0.4);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.banner-3 .background-image img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: none;
-}
-
-.banner-3 .banner-text {
-    padding: 60px;
-    z-index: 1;
-}
-
-.mini-bio {
-     font-family: 'Role Model', sans-serif; /* Usando Role Model na mini bio */
-    font-size: 1.1em;
-    font-weight: 500;
-    color: #392523; /* Cor castanha principal */
-    line-height: 1.8;
-    max-width: 800px;
-    text-align: left;
-}
-
-.banner-4 {
-    background-color: #f5f5f5;
-    text-align: center;
-    padding-top: 60px;
-    padding-bottom: 0;
-}
-
-.banner-4-title {
-    font-family: 'Nixie One', sans-serif;
-    font-size: 2.5em;
-    color: #392523; /* Cor castanha principal */
-    margin-bottom: 30px;
-}
-
-.brands-grid {
-    display: flex;
-    flex-direction: column;
-    padding: 0 20px 60px;
-}
-
-.brand-row {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
-}
-
-.brand-row img {
-    width: 80px;
-    margin: 0 20px;
-}
-
-/* Gallery */
-.gallery {
-    background-color: #fff;
-    text-align: center;
-    padding-top: 60px;
-    padding-bottom: 0;
-}
-
-.gallery h2{
-    font-family: 'Nixie One', sans-serif;
-    font-size: 2.5em;
-    color: #392523; /* Cor castanha principal */
-    margin-bottom: 30px;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-.gallery-item {
-    text-decoration: none;
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.gallery-item:hover {
-    transform: scale(1.05);
-}
-
-/* Footer */
-footer {
-    padding: 30px 0;
-    background-color: #f0f0f0;
-    text-align: center;
-}
-
-.social-icons a {
-    font-size: 25px;
-    margin: 0 10px;
-    color: #392523; /* Cor castanha principal */
-    transition: color 0.3s ease;
-    font-family: 'Fragment Core', sans-serif;
-}
-
-.social-icons a:hover {
-    color: #94A473; /* Cor verde de detalhes */
-}
-
-.contact-form {
-    max-width: 500px;
-    margin: 20px auto;
-    text-align: left;
-}
-
-.contact-form h3 {
-    font-family: 'Nixie One', sans-serif;
-    font-size: 1.8em;
-    color: #392523; /* Cor castanha principal */
-    text-align: center;
-    margin-bottom: 15px;
-    font-weight: 500;
-}
-
-.contact-form input[type="email"],
-.contact-form input[type="text"],
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    font-family: 'Nixie One', sans-serif;
-}
-
-.contact-form button {
-    background-color: #392523; /* Cor castanha principal */
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-family: 'Nixie One', sans-serif;
-}
-
-.contact-form button:hover {
-    background-color: #94A473; /* Cor verde de detalhes */
-}
-
-/* Responsiveness */
+/* ------------------------------------ */
+/*            RESPONSIVIDADE            */
+/* ------------------------------------ */
+/* Em telas menores que 768px */
 @media (max-width: 768px) {
-    header {
-        padding: 15px 20px;
-        flex-direction: column;
+    /* Container se adaptando*/
+    .container{
+        padding: 0 15px;
+    }
+    /* Header */
+	.header .container{
+		flex-direction: column; /* alinha a logo em cima e menu embaixo */
+        align-items: start;
+    }
+    .header__nav {
+        margin-top: 15px; /* espaço entre a logo e o menu*/
+    }
+	.header__nav ul li {
+		margin: 0 5px; /* distância menor entre cada elemento*/
     }
 
-    .logo {
-        font-size: 1.5em;
-        margin-bottom: 10px;
+	/* Banner 2*/
+  .banner-2 {
+		flex-direction: column; /* o bloco texto e o bloco imagem ficarão um abaixo do outro*/
+    }
+    .banner-2__content,
+    .banner-2__image {
+      width: 100%;  /* as colunas passam a ter 100% da tela */
+      padding: 30px 20px; /* os espaçamentos também se ajustam para telas menores */
     }
 
-    nav ul {
-        flex-direction: column;
-        text-align: center;
+  .banner-2__image img {
+      height: auto; /* a imagem se adapta a sua altura */
+      width: 100%;
+  }
+
+	.banner-2__content h2 { /* textos adaptados*/
+      font-size: 1.6rem;
     }
 
-    nav ul li {
-        margin: 5px 0;
+    .banner-2__content h3{
+      font-size: 1.2rem;
+    }
+    .banner-2__content p{
+        font-size: 0.9rem;
     }
 
-    .banner-1 {
-        height: 400px;
-    }
-
-    .banner-title {
-        font-size: 3em;
-    }
-
-    .banner-2 {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .banner-2 .banner-image img{
-        max-width: 100%;
-    }
-
-    .banner-subtitle {
-        font-size: 1.5em;
-        text-align: center;
-        padding-left: 0;
-    }
-
-    .mini-bio {
-        font-size: 1em;
-    }
-
-    .brands-grid {
-        padding: 0 10px;
-    }
-
-    .brand-row img {
-        width: 60px;
-        margin: 10px 15px;
-    }
-
-    .contact-form {
-        max-width: 90%;
-    }
-}
-
-@media (max-width: 480px) {
-    .banner-title {
-        font-size: 2.5em;
-    }
-
-    .banner-2 .banner-text,
-    .banner-3 .banner-text{
-        padding: 30px;
-    }
-
-    .banner-3 .mini-bio {
-         font-size: 1.1em;
-        line-height: 1.7;
-    }
 }
