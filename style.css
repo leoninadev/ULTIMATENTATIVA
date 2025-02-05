@@ -174,7 +174,10 @@ section {
 }
 
 .banner-content {
-    z-index: 2;
+    /* Adicione estilos aqui para formatar o conteúdo dentro do banner */
+    /* Por exemplo: */
+    color: white;
+    font-size: 2em;
 }
 
 .banner-title {
