@@ -1,17 +1,68 @@
-/* Reset CSS */
-* {
+/* Reset CSS Completo */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Nixie One', sans-serif; /* Fonte Nixie One como padrão */
+html {
     font-size: 16px;
-    color: #392523; /* Cor castanha principal para texto geral */
-    background-color: #F8F2EA; /* Cor de fundo bege */
-    line-height: 1.6; /* Ajuste no line-height */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Nixie One', sans-serif;
+    font-size: 1rem;
+    color: #392523;
+    background-color: #F8F2EA;
+    line-height: 1.6;
     overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    font: inherit;
+}
+
+input,
+textarea,
+select {
+    font: inherit;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    padding: 0.5em;
+    display: block;
+    width: 100%;
+}
+
+/* Layout */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 /* Header */
@@ -31,7 +82,7 @@ header {
 .logo {
     font-family: 'Nixie One', sans-serif;
     font-size: 2em;
-    color: #392523; /* Cor castanha principal */
+    color: #392523;
     letter-spacing: 2px;
     text-align: center;
 }
@@ -47,14 +98,14 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #392523; /* Cor castanha principal */
+    color: #392523;
     transition: color 0.3s ease;
     font-weight: 500;
-    font-family: 'Fragment Core', sans-serif; /* Usando Fragment Core no menu */
+    font-family: 'Fragment Core', sans-serif;
 }
 
 nav ul li a:hover {
-    color: #94A473; /* Cor verde de detalhes */
+    color: #94A473;
 }
 
 .dropdown {
@@ -66,7 +117,7 @@ nav ul li a:hover {
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -74,15 +125,15 @@ nav ul li a:hover {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    color: #392523; /* Cor castanha principal */
+    color: #392523;
     transition: color 0.3s ease;
     font-weight: 500;
-    font-family: 'Fragment Core', sans-serif; /* Usando Fragment Core no dropdown */
+    font-family: 'Fragment Core', sans-serif;
 }
 
 .dropdown-content a:hover {
     background-color: #f1f1f1;
-    color: #94A473; /* Cor verde de detalhes */
+    color: #94A473;
 }
 
 .dropdown:hover .dropdown-content {
@@ -100,16 +151,18 @@ main {
 
 section {
     padding: 60px 0;
-    max-width: 1200px;
-    margin: 0 auto;
+    /* max-width: 1200px; REMOVIDO */
+    margin: 0; /* REMOVIDO */
     position: relative;
     overflow: hidden;
+    width: 100%; /* Ocupa toda a largura */
 }
 
 .banner-1 {
     background-image: url('img/banner1.jpg');
     background-size: cover;
     background-position: center;
+    width: 100%;
     height: 600px;
     display: flex;
     align-items: center;
@@ -117,7 +170,6 @@ section {
     text-align: center;
     position: relative;
     z-index: 1;
-    width: 100%;
     background-repeat: no-repeat;
 }
 
@@ -133,7 +185,7 @@ section {
 }
 
 .banner-2 {
-    background-color: #94A473; /* Cor verde de detalhes */
+    background-color: #94A473;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -153,14 +205,14 @@ section {
     text-align: center;
 }
 
-.banner-2 .banner-image img{
+.banner-2 .banner-image img {
     max-width: 80%;
     height: auto;
     border-radius: 8px;
 }
 
 .banner-subtitle {
-    font-family: 'Role Model', sans-serif; /* Usando Role Model nos subtítulos */
+    font-family: 'Role Model', sans-serif;
     font-size: 2em;
     color: #fff;
     font-style: italic;
@@ -169,16 +221,17 @@ section {
     padding-left: 30px;
 }
 
-.banner-3{
-    background-color: #F8F2EA; /* Cor de fundo bege */
+.banner-3 {
+    background-color: #F8F2EA;
     display: flex;
     position: relative;
     align-items: center;
     justify-content: center;
+    width: 100%;
     padding: 0;
 }
 
-.banner-3 .background-image{
+.banner-3 .background-image {
     background-image: url('img/banner3.jpg');
     position: absolute;
     top: 0;
@@ -191,7 +244,7 @@ section {
     background-repeat: no-repeat;
 }
 
-.banner-3 .background-image img{
+.banner-3 .background-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -205,10 +258,10 @@ section {
 }
 
 .mini-bio {
-     font-family: 'Role Model', sans-serif; /* Usando Role Model na mini bio */
+    font-family: 'Role Model', sans-serif;
     font-size: 1.1em;
     font-weight: 500;
-    color: #392523; /* Cor castanha principal */
+    color: #392523;
     line-height: 1.8;
     max-width: 800px;
     text-align: left;
@@ -217,6 +270,7 @@ section {
 .banner-4 {
     background-color: #f5f5f5;
     text-align: center;
+    width: 100%;
     padding-top: 60px;
     padding-bottom: 0;
 }
@@ -224,7 +278,7 @@ section {
 .banner-4-title {
     font-family: 'Nixie One', sans-serif;
     font-size: 2.5em;
-    color: #392523; /* Cor castanha principal */
+    color: #392523;
     margin-bottom: 30px;
 }
 
@@ -250,14 +304,15 @@ section {
 .gallery {
     background-color: #fff;
     text-align: center;
+    width: 100%;
     padding-top: 60px;
     padding-bottom: 0;
 }
 
-.gallery h2{
+.gallery h2 {
     font-family: 'Nixie One', sans-serif;
     font-size: 2.5em;
-    color: #392523; /* Cor castanha principal */
+    color: #392523;
     margin-bottom: 30px;
 }
 
@@ -289,18 +344,19 @@ footer {
     padding: 30px 0;
     background-color: #f0f0f0;
     text-align: center;
+    width: 100%;
 }
 
 .social-icons a {
     font-size: 25px;
     margin: 0 10px;
-    color: #392523; /* Cor castanha principal */
+    color: #392523;
     transition: color 0.3s ease;
     font-family: 'Fragment Core', sans-serif;
 }
 
 .social-icons a:hover {
-    color: #94A473; /* Cor verde de detalhes */
+    color: #94A473;
 }
 
 .contact-form {
@@ -312,7 +368,7 @@ footer {
 .contact-form h3 {
     font-family: 'Nixie One', sans-serif;
     font-size: 1.8em;
-    color: #392523; /* Cor castanha principal */
+    color: #392523;
     text-align: center;
     margin-bottom: 15px;
     font-weight: 500;
@@ -331,7 +387,7 @@ footer {
 }
 
 .contact-form button {
-    background-color: #392523; /* Cor castanha principal */
+    background-color: #392523;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -342,7 +398,7 @@ footer {
 }
 
 .contact-form button:hover {
-    background-color: #94A473; /* Cor verde de detalhes */
+    background-color: #94A473;
 }
 
 /* Responsiveness */
@@ -377,9 +433,10 @@ footer {
     .banner-2 {
         flex-direction: column;
         text-align: center;
+        width: 100%;
     }
 
-    .banner-2 .banner-image img{
+    .banner-2 .banner-image img {
         max-width: 100%;
     }
 
@@ -413,12 +470,11 @@ footer {
     }
 
     .banner-2 .banner-text,
-    .banner-3 .banner-text{
+    .banner-3 .banner-text {
         padding: 30px;
     }
 
     .banner-3 .mini-bio {
-         font-size: 1.1em;
+        font-size: 1.1em;
         line-height: 1.7;
     }
-}
