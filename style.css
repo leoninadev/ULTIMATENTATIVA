@@ -158,10 +158,11 @@ section {
     width: 100%; /* Ocupa toda a largura */
 }
 
+/* --------------- MODIFICADO --------------- */
 .banner-1 {
-    background-image: url('img/banner1.jpg');
-    background-size: cover;
-    background-position: center;
+    /*background-image: url('img/banner1.jpg'); REMOVIDO */
+    /*background-size: cover; REMOVIDO */
+    /*background-position: center; REMOVIDO */
     width: 100%;
     height: 600px;
     display: flex;
@@ -170,7 +171,15 @@ section {
     text-align: center;
     position: relative;
     z-index: 1;
-    background-repeat: no-repeat;
+    /*background-repeat: no-repeat; REMOVIDO */
+    background-color: #F8F2EA; /* Adicionado para caso a imagem não preencha */
+}
+
+.banner-1 img {
+    width: 100%; /* Ocupa toda a largura do banner */
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: cover; /* Preenche todo o espaço do banner, cortando a imagem se necessário */
+    object-position: center; /* Centraliza a imagem dentro do banner */
 }
 
 .banner-content {
@@ -508,4 +517,3 @@ footer {
         font-size: 1.1em;
         line-height: 1.7;
     }
-
