@@ -267,7 +267,7 @@ section {
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 60px 0; /* Diminui o padding para diminuir o banner */
+    padding: 60px 0;
 }
 
 .banner-3 .background-image {
@@ -298,13 +298,19 @@ section {
 
 /* --------------- MODIFICADO --------------- */
 .mini-bio {
-    font-family: 'Role Model', sans-serif;
-    font-size: 0.7em; /* Diminui a fonte em 0.1em */
-    font-weight: 500;
+    font-family: 'Glacial Indifference', sans-serif;
+    font-size: 0.813em; /* Tamanho da fonte 13px em em */
+    font-weight: normal;
     color: #392523;
-    line-height: 1.8;
+    line-height: 1.6;
     max-width: 800px;
-    text-align: left;
+    text-align: justify; /* Alinhamento justificado */
+    margin: 0; /* Remove espaços entre parágrafos */
+    font-style: italic; /* Fonte em itálico */
+}
+
+.mini-bio p {
+  margin-bottom: 0; /* Remove espaços entre parágrafos */
 }
 
 .banner-4 {
