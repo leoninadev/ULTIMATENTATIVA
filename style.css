@@ -301,8 +301,9 @@ section {
     position: relative;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    padding: 50px 0; /* Ajuste a altura do banner */
+    width: 100%; /* Estica o banner para ocupar toda a largura */
+    padding: 0; /* Remove o padding vertical */
+    height: 500px; /* Define a altura igual aos banners de cima */
 }
 
 .banner-3 .background-image {
@@ -338,10 +339,11 @@ section {
     font-weight: normal;
     color: #392523;
     line-height: 1.6;
-    max-width: 700px; /* Aumente um pouco a largura máxima do texto */
+    max-width: 100%; /* Permite que o texto ocupe toda a largura do banner */
     text-align: justify; /* Alinhamento justificado */
     margin: 0; /* Remove espaços entre parágrafos */
     font-style: italic; /* Fonte em itálico */
+    padding: 20px; /* Adiciona um padding interno para o texto não tocar as bordas */
 }
 
 .mini-bio p {
@@ -475,7 +477,7 @@ footer {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    font-family: 'Nixie One', sans-serif;
+    font-family: 'Fragment Core', sans-serif;
 }
 
 .contact-form button:hover {
