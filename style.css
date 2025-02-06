@@ -1,3 +1,11 @@
+/* Fontes locais */
+@font-face {
+    font-family: 'Glacial Indifference';
+    src: url('fonts/GlacialIndifference-Italic.otf') format('opentype'); /* Ajuste o caminho para o seu arquivo de fonte */
+    font-style: italic;
+    font-weight: normal;
+}
+
 /* Reset CSS Completo */
 *,
 *::before,
@@ -267,7 +275,7 @@ section {
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 60px 0;
+    padding: 40px 0; /* Diminui o padding para diminuir o banner */
 }
 
 .banner-3 .background-image {
@@ -303,7 +311,7 @@ section {
     font-weight: normal;
     color: #392523;
     line-height: 1.6;
-    max-width: 800px;
+    max-width: 600px; /* Diminui a largura máxima do texto */
     text-align: justify; /* Alinhamento justificado */
     margin: 0; /* Remove espaços entre parágrafos */
     font-style: italic; /* Fonte em itálico */
@@ -421,7 +429,6 @@ footer {
 }
 
 .contact-form input[type="email"],
-.contact-form input[type="text"],
 .contact-form textarea {
     width: 100%;
     padding: 10px;
