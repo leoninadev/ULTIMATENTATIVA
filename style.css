@@ -235,8 +235,6 @@ section {
 .container-banners {
   display: flex;            /* Coloca os banners lado a lado */
   width: 100%;             /* Garante que o container ocupa toda a largura */
-  max-width: 1200px;        /* Define uma largura máxima para o container */
-  margin: 0 auto;           /* Centraliza o container */
   height: 500px;
 }
 
@@ -305,8 +303,7 @@ section {
     justify-content: center;
     width: 100%; /* Estica o banner para ocupar toda a largura */
     padding: 0; /* Remove o padding vertical */
-    height: auto; /* Ajuste automático da altura */
-    min-height: 500px; /* altura mínima */
+    height: 500px; /* Define a altura igual aos banners de cima */
 }
 
 .banner-3 .background-image {
@@ -338,17 +335,36 @@ section {
 /* --------------- MODIFICADO --------------- */
 .mini-bio {
     font-family: 'Glacial Indifference', sans-serif;
-    font-size: 1em; /* Tamanho da fonte 13px em em */
+    font-size: 0.813em; /* Tamanho da fonte 13px em em */
     font-weight: normal;
     color: #392523;
-    line-height: 1.7;
-    max-width: 80%; /* Aumenta a largura máxima do texto */
+    line-height: 1.4; /* Diminui o espaçamento entre as linhas */
+    max-width: 75%; /* Define uma largura máxima para o texto (75% do banner) */
     text-align: justify; /* Alinhamento justificado */
-    margin: 0 auto; /* Remove espaços entre parágrafos */
+    margin: 0; /* Remove espaços entre parágrafos */
     font-style: italic; /* Fonte em itálico */
     padding: 20px; /* Adiciona um padding interno para o texto não tocar as bordas */
+    margin: 0 auto; /* Centraliza o texto horizontalmente dentro do banner */
 }
 
 .mini-bio p {
-  margin-bottom: 0.5em; /* Remove espaços entre parágrafos */
+  margin-bottom: 0.2em; /* Adiciona um pequeno espaçamento entre os parágrafos */
+}
+/* Adiciona o código abaixo para colocar o conteúdo dentro de uma caixa */
+.banner-3 .banner-content {
+    width: 70%; /* Largura da caixa */
+    margin: 0 auto; /* Centraliza a caixa horizontalmente */
+    padding: 20px; /* Espaçamento interno da caixa */
+}
+
+/* Esconda a formatação original da mini bio para não conflitar com as configurações de texto */
+.banner-content p{
+    font-size: 12px;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+
+/* Aumenta a largura do banner para caber o conteúdo e o mantém alinhado ao centro */
+.container-banners {
+    max-width: 1200px;
+    margin: auto;
 }
