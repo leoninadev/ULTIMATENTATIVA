@@ -299,7 +299,7 @@ section {
 /* --------------- MODIFICADO --------------- */
 .mini-bio {
     font-family: 'Role Model', sans-serif;
-    font-size: 1.1em; /* Diminui a fonte em 0.1em */
+    font-size: 0.7em; /* Diminui a fonte em 0.1em */
     font-weight: 500;
     color: #392523;
     line-height: 1.8;
