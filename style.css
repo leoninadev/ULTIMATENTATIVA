@@ -267,7 +267,7 @@ section {
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 80px 0; /* Aumentei o padding para aumentar o banner */
+    padding: 60px 0; /* Diminui o padding para diminuir o banner */
 }
 
 .banner-3 .background-image {
@@ -299,7 +299,7 @@ section {
 /* --------------- MODIFICADO --------------- */
 .mini-bio {
     font-family: 'Role Model', sans-serif;
-    font-size: 1.2em; /* Aumentei a fonte em 0.1em (um pouco maior) */
+    font-size: 1.1em; /* Diminui a fonte em 0.1em */
     font-weight: 500;
     color: #392523;
     line-height: 1.8;
