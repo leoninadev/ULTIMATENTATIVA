@@ -187,6 +187,41 @@ section {
     font-style: italic;
 }
 
+/* --------------- ADICIONADO --------------- */
+.container-banners {
+  display: flex;            /* Coloca os banners lado a lado */
+  width: 100%;             /* Garante que o container ocupa toda a largura */
+  height: 500px;
+}
+
+.container-banners > *{
+  width: 50%;   /* Cada banner ocupa 50% da largura */
+  display: flex; /* use flexbox to center content */
+  justify-content: center;
+  align-items: center;
+}
+
+.container-banners .banner-texto {
+  background-color: #94A473;
+  color: white;
+}
+
+.container-banners .banner-texto .banner-subtitle{
+  width: 80%;
+  text-align: center;
+}
+
+.container-banners .banner-imagem{
+  background-color: #F8F2EA;
+}
+
+.container-banners .banner-imagem img{
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+/* --------------- MODIFICADO --------------- */
+/* REMOVER */
 .banner-2 {
   background-color: #94A473;
   display: flex;
@@ -199,49 +234,20 @@ section {
   flex-direction: row;
 }
 
+/* REMOVER */
 .banner-2 .banner-text {
   flex: 40;
   padding: 20px;
   color:white;
-
 }
-/* alinhamento do banner texto do banner 2 */
+
+/* REMOVER */
 .banner-text{
   height:100%;
   display:flex;
   flex-direction:column;
   align-items: flex-start;
   justify-content: center;
-}
-
-.banner-2 .banner-bio {
-    color: #392523;
-  flex: 60;
-  padding: 20px;
-  height:100%;
-    display:flex;
-    flex-direction:column;
-    align-items: flex-start;
-    justify-content: center;
-
-
-}
-/*
-Formatacao de textos no lado do BIO - Biografia. 
-Fonte branca de marca texto em caixa de cor escura (bege original).
-Este efeito realca a importancia da informacao do autor dentro da caixa da BIO
-*/
-.banner-2 .mini-bio{
-   font-family: 'Role Model', sans-serif;
-    font-size: 1.1em;
-    font-weight: 500;
-    color: #392523; /* Cor castanha principal */
-    line-height: 1.8;
-    max-width: 100%;
-    text-align: left;
-   padding: 40px;
-    text-align:left;
-    color:#F8F2EA;
 }
 
 .banner-3 {
@@ -453,6 +459,7 @@ footer {
         font-size: 3em;
     }
 
+/* --------------- REMOVER --------------- */
     .banner-2 {
         flex-direction: column;
         text-align: center;
@@ -501,3 +508,4 @@ footer {
         font-size: 1.1em;
         line-height: 1.7;
     }
+    
