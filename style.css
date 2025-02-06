@@ -301,9 +301,8 @@ section {
     position: relative;
     align-items: center;
     justify-content: center;
-    width: 100%; /* Estica o banner para ocupar toda a largura */
-    padding: 0; /* Remove o padding vertical */
-    height: 500px; /* Define a altura igual aos banners de cima */
+    width: 100%;
+    padding: 50px 0; /* Ajuste a altura do banner */
 }
 
 .banner-3 .background-image {
@@ -338,33 +337,227 @@ section {
     font-size: 0.813em; /* Tamanho da fonte 13px em em */
     font-weight: normal;
     color: #392523;
-    line-height: 1.4; /* Diminui o espaçamento entre as linhas */
-    max-width: 75%; /* Define uma largura máxima para o texto (75% do banner) */
+    line-height: 1.6;
+    max-width: 700px; /* Aumente um pouco a largura máxima do texto */
     text-align: justify; /* Alinhamento justificado */
     margin: 0; /* Remove espaços entre parágrafos */
     font-style: italic; /* Fonte em itálico */
-    padding: 20px; /* Adiciona um padding interno para o texto não tocar as bordas */
-    margin: 0 auto; /* Centraliza o texto horizontalmente dentro do banner */
 }
 
 .mini-bio p {
-  margin-bottom: 0.2em; /* Adiciona um pequeno espaçamento entre os parágrafos */
-}
-/* Adiciona o código abaixo para colocar o conteúdo dentro de uma caixa */
-.banner-3 .banner-content {
-    width: 70%; /* Largura da caixa */
-    margin: 0 auto; /* Centraliza a caixa horizontalmente */
-    padding: 20px; /* Espaçamento interno da caixa */
+  margin-bottom: 0; /* Remove espaços entre parágrafos */
 }
 
-/* Esconda a formatação original da mini bio para não conflitar com as configurações de texto */
-.banner-content p{
-    font-size: 12px;
-    font-family: 'Glacial Indifference', sans-serif;
+.banner-4 {
+    background-color: #f5f5f5;
+    text-align: center;
+    width: 100%;
+    padding-top: 60px;
+    padding-bottom: 0;
 }
 
-/* Aumenta a largura do banner para caber o conteúdo e o mantém alinhado ao centro */
-.container-banners {
-    max-width: 1200px;
-    margin: auto;
+.banner-4-title {
+    font-family: 'Nixie One', sans-serif;
+    font-size: 2.5em;
+    color: #392523;
+    margin-bottom: 30px;
 }
+
+.brands-grid {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 60px;
+}
+
+.brand-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.brand-row img {
+    width: 80px;
+    margin: 0 20px;
+}
+
+/* Gallery */
+.gallery {
+    background-color: #fff;
+    text-align: center;
+    width: 100%;
+    padding-top: 60px;
+    padding-bottom: 0;
+}
+
+.gallery h2 {
+    font-family: 'Nixie One', sans-serif;
+    font-size: 2.5em;
+    color: #392523;
+    margin-bottom: 30px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery-item {
+    text-decoration: none;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    padding: 30px 0;
+    background-color: #f0f0f0;
+    text-align: center;
+    width: 100%;
+}
+
+.social-icons a {
+    font-size: 25px;
+    margin: 0 10px;
+    color: #392523;
+    transition: color 0.3s ease;
+    font-family: 'Fragment Core', sans-serif;
+}
+
+.social-icons a:hover {
+    color: #94A473;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.contact-form h3 {
+    font-family: 'Nixie One', sans-serif;
+    font-size: 1.8em;
+    color: #392523;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.contact-form input[type="email"],
+.contact-form input[type="text"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Nixie One', sans-serif;
+}
+
+.contact-form button {
+    background-color: #392523;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Nixie One', sans-serif;
+}
+
+.contact-form button:hover {
+    background-color: #94A473;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        flex-direction: column;
+    }
+
+    .logo {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .banner-1 {
+        height: 400px;
+    }
+
+    .banner-title {
+        font-size: 3em;
+    }
+
+/* --------------- REMOVER --------------- */
+    .banner-2 {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+
+    .banner-2 .banner-image img {
+        max-width: 100%;
+    }
+
+    .banner-subtitle {
+        font-size: 1.5em;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .mini-bio {
+        font-size: 0.5em;
+    }
+
+    .brands-grid {
+        padding: 0 10px;
+    }
+
+    .brand-row img {
+        width: 60px;
+        margin: 10px 15px;
+    }
+
+    .contact-form {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-title {
+        font-size: 2.5em;
+    }
+
+    .banner-2 .banner-text,
+    .banner-3 .banner-text {
+        padding: 30px;
+    }
+
+    /* --------------- MODIFICADO --------------- */
+    .banner-3 .mini-bio {
+        font-size: 1.1em;
+        line-height: 1.7;
+    }
