@@ -494,9 +494,14 @@ footer {
         padding-left: 0;
     }
 
-    .mini-bio {
-        font-size: 0.5em;
+  .mini-bio {
+        font-size: 0.8em; /* Aumenta o tamanho da fonte para melhor leitura */
+        line-height: 1.8; /* Ajusta o espaçamento entre as linhas */
+        padding: 1rem; /* Adiciona um espaço ao redor do texto */
+        word-wrap: break-word; /* Quebra palavras longas */
+        text-align: left; /* Garante que o texto esteja alinhado à esquerda */
     }
+}
 
     .brands-grid {
         padding: 0 0.625rem; /* 0 10px convertido para rem */
