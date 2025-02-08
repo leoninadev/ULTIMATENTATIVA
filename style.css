@@ -1,34 +1,35 @@
 /* Fontes locais */
 @font-face {
     font-family: 'Glacial Indifference';
-    src: url('font/GlacialIndifference-Italic.otf') format('opentype'); /* Ajuste o caminho para o seu arquivo de fonte */
+    src: url('font/GlacialIndifference-Italic.otf') format('opentype');
     font-style: italic;
     font-weight: normal;
 }
 
 @font-face {
     font-family: 'Fragment Core';
-    src: url('font/Fragmentcore.otf') format('opentype'); /* Ajuste o caminho para o seu arquivo de fonte */
+    src: url('font/Fragmentcore.otf') format('opentype');
     font-style: normal;
     font-weight: normal;
 }
 
 @font-face {
     font-family: 'Nixie One';
-    src: url('font/NixieOne.ttf') format('truetype'); /* Ajuste o caminho para o seu arquivo de fonte */
+    src: url('font/NixieOne.ttf') format('truetype');
     font-style: normal;
     font-weight: normal;
 }
 
 @font-face {
     font-family: 'Role Model';
-    src: url('font/RoleModel-PersonalUse-Regular.otf') format('opentype'); /* Ajuste o caminho para o seu arquivo de fonte */
+    src: url('font/RoleModel-PersonalUse-Regular.otf') format('opentype');
     font-style: normal;
     font-weight: normal;
 }
+
 @font-face {
     font-family: 'Role Model';
-    src: url('font/RoleModel-PersonalUse-Oblique.otf') format('opentype'); /* Ajuste o caminho para o seu arquivo de fonte */
+    src: url('font/RoleModel-PersonalUse-Oblique.otf') format('opentype');
     font-style: italic;
     font-weight: normal;
 }
@@ -105,9 +106,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 1.25rem 2.5rem; /* 20px 40px convertido para rem */
     background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1); /* 0 2px 5px convertido para rem */
     position: fixed;
     top: 0;
     width: 100%;
@@ -118,7 +119,7 @@ header {
     font-family: 'Nixie One', sans-serif;
     font-size: 2em;
     color: #392523;
-    letter-spacing: 2px;
+    letter-spacing: 0.125rem; /* 2px convertido para rem */
     text-align: center;
 }
 
@@ -128,7 +129,7 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 0.9375rem; /* 0 15px convertido para rem */
 }
 
 nav ul li a {
@@ -151,13 +152,13 @@ nav ul li a:hover {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    min-width: 10rem; /* 160px convertido para rem */
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.2); /* 0px 8px 16px 0px convertido para rem */
     z-index: 1;
 }
 
 .dropdown-content a {
-    padding: 12px 16px;
+    padding: 0.75rem 1rem; /* 12px 16px convertido para rem */
     text-decoration: none;
     display: block;
     color: #392523;
@@ -181,45 +182,37 @@ nav ul li a:hover {
 
 /* Banner Sections */
 main {
-    padding-top: 80px;
+    padding-top: 5rem; /* 80px convertido para rem */
 }
 
 section {
-    padding: 60px 0;
-    /* max-width: 1200px; REMOVIDO */
-    margin: 0; /* REMOVIDO */
+    padding: 3.75rem 0; /* 60px 0 convertido para rem */
     position: relative;
     overflow: hidden;
-    width: 100%; /* Ocupa toda a largura */
+    width: 100%;
 }
 
 /* --------------- MODIFICADO --------------- */
 .banner-1 {
-    /*background-image: url('img/banner1.jpg'); REMOVIDO */
-    /*background-size: cover; REMOVIDO */
-    /*background-position: center; REMOVIDO */
     width: 100%;
-    height: 600px;
+    height: 37.5rem; /* 600px convertido para rem */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
     z-index: 1;
-    /*background-repeat: no-repeat; REMOVIDO */
-    background-color: #F8F2EA; /* Adicionado para caso a imagem não preencha */
+    background-color: #F8F2EA;
 }
 
 .banner-1 img {
-    width: 100%; /* Ocupa toda a largura do banner */
-    height: auto; /* Mantém a proporção da imagem */
-    object-fit: cover; /* Preenche todo o espaço do banner, cortando a imagem se necessário */
-    object-position: center; /* Centraliza a imagem dentro do banner */
+    width: 100%;
+    height: 100%; /* Preenche todo o espaço do banner */
+    object-fit: cover;
+    object-position: center;
 }
 
 .banner-content {
-    /* Adicione estilos aqui para formatar o conteúdo dentro do banner */
-    /* Por exemplo: */
     color: white;
     font-size: 2em;
 }
@@ -233,68 +226,38 @@ section {
 
 /* --------------- ADICIONADO --------------- */
 .container-banners {
-  display: flex;            /* Coloca os banners lado a lado */
-  width: 100%;             /* Garante que o container ocupa toda a largura */
-  height: 500px;
+    display: flex;
+    width: 100%;
+    height: 31.25rem; /* 500px convertido para rem */
 }
 
-.container-banners > *{
-  width: 50%;   /* Cada banner ocupa 50% da largura */
-  display: flex; /* use flexbox to center content */
-  justify-content: center;
-  align-items: center;
+.container-banners > * {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container-banners .banner-texto {
-  background-color: #94A473;
-  color: white;
+    background-color: #94A473;
+    color: white;
 }
 
-.container-banners .banner-texto .banner-subtitle{
-  width: 80%;
-  text-align: center;
-  /* AUMENTO DA FONTE E CONVERSÃO PARA MAIÚSCULAS */
-  font-size: 2.5em; /* Aumenta o tamanho da fonte */
-  text-transform: uppercase; /* Converte o texto para maiúsculo */
+.container-banners .banner-texto .banner-subtitle {
+    width: 80%;
+    text-align: center;
+    font-size: 2.5em;
+    text-transform: uppercase;
 }
 
-.container-banners .banner-imagem{
-  background-color: #F8F2EA;
+.container-banners .banner-imagem {
+    background-color: #F8F2EA;
 }
 
-.container-banners .banner-imagem img{
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-/* --------------- MODIFICADO --------------- */
-/* REMOVER */
-.banner-2 {
-  background-color: #94A473;
-  display: flex;
-  /*flex-wrap: wrap; < REMOVER
-  align-items: center;*/ < REMOVER
-  justify-content: center;
-  width: 100%;
-  height: 500px;
-  text-align: left;
-  flex-direction: row;
-}
-
-/* REMOVER */
-.banner-2 .banner-text {
-  flex: 40;
-  padding: 20px;
-  color:white;
-}
-
-/* REMOVER */
-.banner-text{
-  height:100%;
-  display:flex;
-  flex-direction:column;
-  align-items: flex-start;
-  justify-content: center;
+.container-banners .banner-imagem img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 /* --------------- MODIFICADO --------------- */
@@ -305,7 +268,7 @@ section {
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 50px 0; /* Ajuste a altura do banner */
+    padding: 3.125rem 0; /* 50px 0 convertido para rem */
 }
 
 .banner-3 .background-image {
@@ -319,8 +282,7 @@ section {
     filter: brightness(0.4);
     background-size: cover;
     background-repeat: no-repeat;
-    /* Ajustes para melhor visualização em dispositivos menores */
-    background-position: center; /* Garante que a imagem esteja sempre centralizada */
+    background-position: center;
 }
 
 .banner-3 .banner-image img {
@@ -332,40 +294,32 @@ section {
 }
 
 .banner-3 .banner-text {
-    padding: 60px;
+    padding: 3.75rem; /* 60px convertido para rem */
     z-index: 1;
 }
 
 /* --------------- MODIFICADO --------------- */
 .mini-bio {
     font-family: 'Glacial Indifference', sans-serif;
-    /* Definindo o tamanho da fonte para 33% (1/3) do tamanho original */
-    font-size: 0.535em; /* Aproximadamente 8.5px, se o tamanho base for 16px */
+    font-size: 0.535em;
     font-weight: normal;
     color: #392523;
     line-height: 1.6;
-    max-width: 700px; /* Aumente um pouco a largura máxima do texto */
-    text-align: justify; /* Alinhamento justificado */
-    margin: 0; /* Remove espaços entre parágrafos */
-    font-style: italic; /* Fonte em itálico */
-}
-
-/* Ajuste para telas menores, para garantir a legibilidade */
-@media (max-width: 768px) {
-    .mini-bio {
-        font-size: 0.7em; /* Aumenta um pouco para melhor leitura em telas menores */
-    }
+    max-width: 43.75rem; /* 700px convertido para rem */
+    text-align: justify;
+    margin: 0 auto; /* Centraliza o texto */
+    font-style: italic;
 }
 
 .mini-bio p {
-  margin-bottom: 0; /* Remove espaços entre parágrafos */
+    margin-bottom: 0;
 }
 
 .banner-4 {
     background-color: #f5f5f5;
     text-align: center;
     width: 100%;
-    padding-top: 60px;
+    padding-top: 3.75rem; /* 60px convertido para rem */
     padding-bottom: 0;
 }
 
@@ -373,25 +327,25 @@ section {
     font-family: 'Nixie One', sans-serif;
     font-size: 2.5em;
     color: #392523;
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem; /* 30px convertido para rem */
 }
 
 .brands-grid {
     display: flex;
     flex-direction: column;
-    padding: 0 20px 60px;
+    padding: 0 1.25rem 3.75rem; /* 0 20px 60px convertido para rem */
 }
 
 .brand-row {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem; /* 30px convertido para rem */
 }
 
 .brand-row img {
-    width: 80px;
-    margin: 0 20px;
+    width: 5rem; /* 80px convertido para rem */
+    margin: 0 1.25rem; /* 0 20px convertido para rem */
 }
 
 /* Gallery */
@@ -399,7 +353,7 @@ section {
     background-color: #fff;
     text-align: center;
     width: 100%;
-    padding-top: 60px;
+    padding-top: 3.75rem; /* 60px convertido para rem */
     padding-bottom: 0;
 }
 
@@ -407,14 +361,14 @@ section {
     font-family: 'Nixie One', sans-serif;
     font-size: 2.5em;
     color: #392523;
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem; /* 30px convertido para rem */
 }
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr)); /* minmax(300px, 1fr) convertido para rem */
+    gap: 1.25rem; /* 20px convertido para rem */
+    padding: 1.25rem; /* 20px convertido para rem */
 }
 
 .gallery-item {
@@ -435,15 +389,15 @@ section {
 
 /* Footer */
 footer {
-    padding: 30px 0;
+    padding: 1.875rem 0; /* 30px 0 convertido para rem */
     background-color: #f0f0f0;
     text-align: center;
     width: 100%;
 }
 
 .social-icons a {
-    font-size: 25px;
-    margin: 0 10px;
+    font-size: 1.5625rem; /* 25px convertido para rem */
+    margin: 0 0.625rem; /* 0 10px convertido para rem */
     color: #392523;
     transition: color 0.3s ease;
     font-family: 'Fragment Core', sans-serif;
@@ -454,8 +408,8 @@ footer {
 }
 
 .contact-form {
-    max-width: 500px;
-    margin: 20px auto;
+    max-width: 31.25rem; /* 500px convertido para rem */
+    margin: 1.25rem auto; /* 20px auto convertido para rem */
     text-align: left;
 }
 
@@ -464,7 +418,7 @@ footer {
     font-size: 1.8em;
     color: #392523;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 0.9375rem; /* 15px convertido para rem */
     font-weight: 500;
 }
 
@@ -472,20 +426,20 @@ footer {
 .contact-form input[type="text"],
 .contact-form textarea {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 0.625rem; /* 10px convertido para rem */
+    margin-bottom: 0.625rem; /* 10px convertido para rem */
     border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 0.3125rem; /* 5px convertido para rem */
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1); /* 0px 2px 5px rgba(0, 0, 0, 0.1) convertido para rem */
     font-family: 'Nixie One', sans-serif;
 }
 
 .contact-form button {
     background-color: #392523;
     color: #fff;
-    padding: 10px 20px;
+    padding: 0.625rem 1.25rem; /* 10px 20px convertido para rem */
     border: none;
-    border-radius: 5px;
+    border-radius: 0.3125rem; /* 5px convertido para rem */
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-family: 'Nixie One', sans-serif;
@@ -498,13 +452,13 @@ footer {
 /* Responsiveness */
 @media (max-width: 768px) {
     header {
-        padding: 15px 20px;
+        padding: 0.9375rem 1.25rem; /* 15px 20px convertido para rem */
         flex-direction: column;
     }
 
     .logo {
         font-size: 1.5em;
-        margin-bottom: 10px;
+        margin-bottom: 0.625rem; /* 10px convertido para rem */
     }
 
     nav ul {
@@ -513,26 +467,25 @@ footer {
     }
 
     nav ul li {
-        margin: 5px 0;
+        margin: 0.3125rem 0; /* 5px 0 convertido para rem */
     }
 
     .banner-1 {
-        height: 400px;
+        height: 25rem; /* 400px convertido para rem */
     }
 
     .banner-title {
         font-size: 3em;
     }
 
-/* --------------- REMOVER --------------- */
-    .banner-2 {
-        flex-direction: column;
-        text-align: center;
-        width: 100%;
+    .container-banners {
+        flex-direction: column; /* Coloca os banners em coluna */
+        height: auto; /* Ajusta a altura automaticamente */
     }
 
-    .banner-2 .banner-image img {
-        max-width: 100%;
+    .container-banners > * {
+        width: 100%; /* Cada banner ocupa 100% da largura */
+        margin-bottom: 1.25rem; /* Adiciona espaço entre os banners */
     }
 
     .banner-subtitle {
@@ -546,12 +499,12 @@ footer {
     }
 
     .brands-grid {
-        padding: 0 10px;
+        padding: 0 0.625rem; /* 0 10px convertido para rem */
     }
 
     .brand-row img {
-        width: 60px;
-        margin: 10px 15px;
+        width: 3.75rem; /* 60px convertido para rem */
+        margin: 0.625rem 0.9375rem; /* 10px 15px convertido para rem */
     }
 
     .contact-form {
@@ -564,12 +517,10 @@ footer {
         font-size: 2.5em;
     }
 
-    .banner-2 .banner-text,
     .banner-3 .banner-text {
-        padding: 30px;
+        padding: 1.875rem; /* 30px convertido para rem */
     }
 
-    /* --------------- MODIFICADO --------------- */
     .banner-3 .mini-bio {
         font-size: 1.1em;
         line-height: 1.7;
