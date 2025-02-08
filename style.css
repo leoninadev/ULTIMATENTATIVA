@@ -1,40 +1,6 @@
-/* Fontes locais */
-@font-face {
-    font-family: 'Glacial Indifference';
-    src: url('font/GlacialIndifference-Italic.otf') format('opentype');
-    font-style: italic;
-    font-weight: normal;
-}
+/* CSS Atualizado */
 
-@font-face {
-    font-family: 'Fragment Core';
-    src: url('font/Fragmentcore.otf') format('opentype');
-    font-style: normal;
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: 'Nixie One';
-    src: url('font/NixieOne.ttf') format('truetype');
-    font-style: normal;
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: 'Role Model';
-    src: url('font/RoleModel-PersonalUse-Regular.otf') format('opentype');
-    font-style: normal;
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: 'Role Model';
-    src: url('font/RoleModel-PersonalUse-Oblique.otf') format('opentype');
-    font-style: italic;
-    font-weight: normal;
-}
-
-/* Reset CSS Completo */
+/* Reset CSS Completo (Mantenha como está) */
 *,
 *::before,
 *::after {
@@ -93,7 +59,7 @@ select {
     width: 100%;
 }
 
-/* Layout */
+/* Layout (Mantenha como está) */
 html,
 body {
     height: 100%;
@@ -179,7 +145,7 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
-/* Banner Sections */
+/* Banner Sections (Mantenha como está) */
 main {
     padding-top: 5rem; /* 80px convertido para rem */
 }
@@ -300,7 +266,7 @@ section {
 /* --------------- MODIFICADO --------------- */
 .mini-bio {
     font-family: 'Glacial Indifference', sans-serif;
-    font-size: 0.535em;
+    font-size: 1em; /* Ajustei para 1em para facilitar o controle */
     font-weight: normal;
     color: #392523;
     line-height: 1.6;
@@ -347,7 +313,7 @@ section {
     margin: 0 1.25rem; /* 0 20px convertido para rem */
 }
 
-/* Gallery */
+/* Gallery (Mantenha como está) */
 .gallery {
     background-color: #fff;
     text-align: center;
@@ -386,7 +352,7 @@ section {
     transform: scale(1.05);
 }
 
-/* Footer */
+/* Footer (Mantenha como está) */
 footer {
     padding: 1.875rem 0; /* 30px 0 convertido para rem */
     background-color: #f0f0f0;
@@ -448,8 +414,9 @@ footer {
     background-color: #94A473;
 }
 
+/* Esconde o botão do menu por padrão */
 .menu-toggle {
-    display: none; /* Esconde o botão do menu por padrão */
+    display: none;
     background: none;
     border: none;
     font-size: 1.5rem;
@@ -472,15 +439,17 @@ footer {
         margin-bottom: 0; /* Remove a margem inferior do logo */
     }
 
+    /* Mostra o botão do menu */
     .menu-toggle {
-        display: block; /* Mostra o botão do menu */
+        display: block;
         position: absolute;
         top: 1rem;
         right: 1rem;
     }
 
+    /* Esconde a navegação por padrão */
     .nav-links {
-        display: none; /* Esconde a navegação por padrão */
+        display: none;
         width: 100%;
         justify-content: center;
     }
@@ -502,14 +471,12 @@ footer {
         width: 100%;
     }
 
+        /* Ajustes na mini-bio para telas menores */
     .mini-bio {
-        font-size: 0.7em; /* Reduz ainda mais o tamanho da fonte */
-        line-height: 1.8; /* Ajusta o espaçamento entre as linhas */
-        padding: 0.5rem; /* Adiciona um espaço ao redor do texto */
-        word-wrap: break-word; /* Quebra palavras longas */
-        text-align: left; /* Garante que o texto esteja alinhado à esquerda */
-        max-width: 70%; /* Limita a largura do texto para criar margens */
-        margin: 0 auto; /* Centraliza o texto */
+        font-size: 0.8em; /* Reduz o tamanho da fonte */
+        margin-left: 15%; /* Adiciona margem esquerda de 15% */
+        margin-right: 15%; /* Adiciona margem direita de 15% */
+        text-align: justify; /* Justifica o texto */
     }
 
     .brands-grid {
@@ -551,8 +518,34 @@ footer {
         padding: 1.875rem; /* 30px convertido para rem */
     }
 
-    .banner-3 .mini-bio {
-        font-size: 1.1em;
+    .mini-bio {
+        font-size: 0.7em; /* Reduz ainda mais o tamanho da fonte */
         line-height: 1.7;
+    }
+
+    /* Ajustes para o container de banners */
+    .container-banners {
+        flex-direction: column; /* Empilha os banners verticalmente */
+        height: auto; /* Altura automática para se ajustar ao conteúdo */
+    }
+
+    .container-banners > * {
+        width: 100%; /* Cada banner ocupa 100% da largura */
+        margin-bottom: 1.875rem; /* Adiciona espaço entre os banners */
+    }
+
+    .container-banners .banner-texto .banner-subtitle {
+        font-size: 2em; /* Reduz o tamanho da fonte do subtítulo */
+    }
+}
+
+/* Media query para telas maiores (tablets e desktops) */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none; /* Esconde o menu toggle em telas maiores */
+    }
+
+    .nav-links {
+        display: flex !important; /* Garante que a navegação seja visível */
     }
 }
