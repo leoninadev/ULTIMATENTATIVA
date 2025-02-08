@@ -367,6 +367,8 @@ section {
     width: 100%;
     padding-top: 60px;
     padding-bottom: 0;
+    padding-left: 30%; /* Adiciona margem à esquerda */
+    padding-right: 30%; /* Adiciona margem à direita */
 }
 
 .banner-4-title {
