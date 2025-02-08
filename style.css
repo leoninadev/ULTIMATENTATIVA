@@ -501,7 +501,6 @@ footer {
         word-wrap: break-word; /* Quebra palavras longas */
         text-align: left; /* Garante que o texto esteja alinhado à esquerda */
     }
-}
 
     .brands-grid {
         padding: 0 0.625rem; /* 0 10px convertido para rem */
@@ -512,8 +511,24 @@ footer {
         margin: 0.625rem 0.9375rem; /* 10px 15px convertido para rem */
     }
 
-    .contact-form {
-        max-width: 90%;
+      .contact-form {
+        max-width: 90%; /* Reduz a largura máxima do formulário */
+        margin: 1.25rem auto; /* Centraliza o formulário */
+        text-align: center; /* Alinha os elementos do formulário ao centro */
+    }
+
+    .contact-form input[type="email"],
+    .contact-form input[type="text"],
+    .contact-form textarea {
+        width: 100%; /* Garante que os campos ocupem 100% da largura do formulário */
+        max-width: 30rem; /* Define uma largura máxima para os campos */
+        margin: 0.625rem auto; /* Centraliza os campos */
+        display: block; /* Garante que os campos ocupem uma linha inteira */
+    }
+
+    .contact-form button {
+        display: block; /* Garante que o botão ocupe uma linha inteira */
+        margin: 0.625rem auto; /* Centraliza o botão */
     }
 }
 
