@@ -264,9 +264,10 @@ section {
 }
 
 /* --------------- MODIFICADO --------------- */
+/* Define um tamanho de fonte base para telas maiores */
 .mini-bio {
     font-family: 'Glacial Indifference', sans-serif;
-    font-size: 1em; /* Ajustei para 1em para facilitar o controle */
+    font-size: 1.1em; /* Defina um tamanho base que fique bom em telas maiores */
     font-weight: normal;
     color: #392523;
     line-height: 1.6;
@@ -478,35 +479,6 @@ footer {
         margin-right: 15%; /* Adiciona margem direita de 15% */
         text-align: justify; /* Justifica o texto */
     }
-
-    .brands-grid {
-        padding: 0 0.625rem; /* 0 10px convertido para rem */
-    }
-
-    .brand-row img {
-        width: 3.75rem; /* 60px convertido para rem */
-        margin: 0.625rem 0.9375rem; /* 10px 15px convertido para rem */
-    }
-
-    .contact-form {
-        max-width: 90%; /* Reduz a largura máxima do formulário */
-        margin: 1.25rem auto; /* Centraliza o formulário */
-        text-align: center; /* Alinha os elementos do formulário ao centro */
-    }
-
-    .contact-form input[type="email"],
-    .contact-form input[type="text"],
-    .contact-form textarea {
-        width: 100%; /* Garante que os campos ocupem 100% da largura do formulário */
-        max-width: 30rem; /* Define uma largura máxima para os campos */
-        margin: 0.625rem auto; /* Centraliza os campos */
-        display: block; /* Garante que os campos ocupem uma linha inteira */
-    }
-
-    .contact-form button {
-        display: block; /* Garante que o botão ocupe uma linha inteira */
-        margin: 0.625rem auto; /* Centraliza o botão */
-    }
 }
 
 @media (max-width: 480px) {
@@ -547,10 +519,5 @@ footer {
 
     .nav-links {
         display: flex !important; /* Garante que a navegação seja visível */
-    }
-
-    /* Define o tamanho da fonte para telas maiores */
-    .mini-bio {
-        font-size: 1em; /* ou o tamanho que você achar adequado */
     }
 }
