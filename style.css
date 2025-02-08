@@ -253,6 +253,9 @@ section {
 .container-banners .banner-texto .banner-subtitle{
   width: 80%;
   text-align: center;
+  /* AUMENTO DA FONTE E CONVERSÃO PARA MAIÚSCULAS */
+  font-size: 2.5em; /* Aumenta o tamanho da fonte */
+  text-transform: uppercase; /* Converte o texto para maiúsculo */
 }
 
 .container-banners .banner-imagem{
