@@ -417,7 +417,7 @@ footer {
     font-size: 1.8em;
     color: #392523;
     text-align: center;
-    margin-bottom: 0.9375rem; /* 15px converted para rem */
+    margin-bottom: 0.9375rem; /* 15px convertido para rem */
     font-weight: 500;
 }
 
@@ -446,6 +446,15 @@ footer {
 
 .contact-form button:hover {
     background-color: #94A473;
+}
+
+.menu-toggle {
+    display: none; /* Esconde o botão do menu por padrão */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #392523;
+    cursor: pointer;
 }
 
 /* Responsiveness */
@@ -494,11 +503,13 @@ footer {
     }
 
     .mini-bio {
-        font-size: 0.8em; /* Aumenta o tamanho da fonte para melhor leitura */
+        font-size: 0.7em; /* Reduz ainda mais o tamanho da fonte */
         line-height: 1.8; /* Ajusta o espaçamento entre as linhas */
-        padding: 1rem; /* Adiciona um espaço ao redor do texto */
+        padding: 0.5rem; /* Adiciona um espaço ao redor do texto */
         word-wrap: break-word; /* Quebra palavras longas */
         text-align: left; /* Garante que o texto esteja alinhado à esquerda */
+        max-width: 70%; /* Limita a largura do texto para criar margens */
+        margin: 0 auto; /* Centraliza o texto */
     }
 
     .brands-grid {
