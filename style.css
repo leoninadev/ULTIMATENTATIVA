@@ -471,7 +471,7 @@ footer {
         width: 100%;
     }
 
-        /* Ajustes na mini-bio para telas menores */
+    /* Ajustes na mini-bio para telas menores */
     .mini-bio {
         font-size: 0.8em; /* Reduz o tamanho da fonte */
         margin-left: 15%; /* Adiciona margem esquerda de 15% */
@@ -547,5 +547,10 @@ footer {
 
     .nav-links {
         display: flex !important; /* Garante que a navegação seja visível */
+    }
+
+    /* Define o tamanho da fonte para telas maiores */
+    .mini-bio {
+        font-size: 1em; /* ou o tamanho que você achar adequado */
     }
 }
